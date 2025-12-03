@@ -32,6 +32,33 @@
   font-size: 1rem;
 }
 
+.links li{
+  display: flex;
+  align-items: center;
+}
+
+/* Style for profile link when user is logged in */
+.links .profile {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Optional: style for sign out link */
+.links .signout {
+  color: #fff;
+  cursor: pointer;
+}
+
+.links .signout:hover {
+  text-decoration: underline;
+  color: #470f51;
+}
+
+/* Hide CTA when user is logged in */
+.cta.hidden {
+  display: none;
+}
+
 .links a:hover {
   text-decoration: underline;
   color: #470f51;

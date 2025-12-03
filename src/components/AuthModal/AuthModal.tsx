@@ -1,5 +1,6 @@
 //User sign-up and sign-in modal component
 import React, { useState } from 'react';
+import { useAuth } from "../../auth/Auth";   //import global auth state
 import './AuthModal.css';
 
 interface AuthModalProps {
@@ -16,6 +17,8 @@ interface FormData {
 
 // AuthModal component definition
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+  const { login } = useAuth();// Access login function from global auth state
+
  // State to toggle between sign-in and sign-up forms
  const [isSignUp, setIsSignUp] = useState(false);
 
@@ -56,14 +59,16 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         return;
       }
 
-      await res.json();
-      setSuccess(isSignUp ? "Account created successfully!" : "Signed in successfully!");
-      // Optionally close modal after short delay
+      const userData = await res.json(); //get user data from response
+      login(userData); //update global auth state
+
+      setSuccess(isSignUp ? "Sign-up successful!": "Sign-in successful!");
       setTimeout(() => {
-        onClose();
+        onClose(); //close modal after success
       }, 1500);
-    } catch (err: any) {
-      setError("Network error: " + err.message);
+
+    } catch (err) {
+      setError("Network error:" + err);
     }
   };
 
@@ -136,7 +141,10 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
 
         <hr />
 
-        <button onClick={handleGoogleAuth} className="google-btn">Sign in with Google</button>
+        <button onClick={handleGoogleAuth} className="google-btn">
+          <img src="src/assets/google-logo.svg" alt="Google logo" />
+          Sign in with Google
+        </button>
       </div>
     </div>
   );

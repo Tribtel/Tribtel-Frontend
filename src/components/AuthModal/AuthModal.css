@@ -1,0 +1,154 @@
+/* Overlay covers the whole screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 25, 30, 0.8); /* deep lavender with transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Modal box */
+.modal {
+  background: #fff;
+  border-radius: 1px;
+  width: 400px;
+  max-width: 90%;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #470f51;
+}
+
+/* Title */
+.modal h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #470f51;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  background: #f0f0f0;
+  cursor: pointer;
+  font-weight: 500;
+  color: #470f51;
+  transition: background 0.2s;
+}
+
+.tabs button.active {
+  background: #f4942f; /* sunset orange */
+  color: #fff;
+  font-weight: bold;
+}
+
+.tabs button:hover {
+  background: #fdc959; /* golden hover */
+}
+
+/* Feedback messages */
+.error-msg {
+  background: #ffe0e0;
+  color: #b00020;
+  padding: 0.5rem;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.success-msg {
+  background: #e0ffe0;
+  color: #0a7a0a;
+  padding: 0.5rem;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Form inputs */
+form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+form input:focus {
+  border-color: #f4942f;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(244, 148, 47, 0.3);
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #470f51;
+  color: #fdc959;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #fdc959;
+  color: #470f51;
+}
+
+/* Divider line */
+.modal hr {
+  margin: 1.5rem 0; /*space above and below divider */
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Google button */
+.google-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #fff;
+  color: #470f51;
+  font-weight: bold;
+  border: 1px solid #470f51;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.google-btn:hover {
+  background: #470f51;
+  color: #fff;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

@@ -1,8 +1,17 @@
 import styles from "./Navbar.module.css";
-import Logo from "../../assets/HlockupB.svg"; // adjust path if needed
+import Logo from "../../assets/HlockupB.svg";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../auth/Auth";
 
-export default function Navbar() {
+interface NavbarProps {
+  onSignInClick: () => void;
+};
+
+export default function Navbar({ onSignInClick }: NavbarProps) {
+
+  // Access global auth state
+  const { user, logout } = useAuth();
+
   return (
     <nav className={styles.navbar}>
       {/* Logo - links to landing page */}
@@ -26,15 +35,33 @@ export default function Navbar() {
         <li>
           <a href="/about">About</a>
         </li>
-        <li>
-          <a href="/signin">Sign in</a>
-        </li>
+        
+        {user ? (
+          <>
+            <li><Link to="/profile">{user.username}</Link></li>
+            <li>
+              <a href="#" onClick={(e) => { e.preventDefault(); logout(); }}>
+                Sign out
+              </a>
+            </li>
+          </>
+        ) : (
+          <li>
+            <a href="#" onClick={(e) => { e.preventDefault(); onSignInClick(); }}>
+              Sign in
+            </a>
+          </li>
+        )}
       </ul>
 
       {/* CTA */}
-      <div className={styles.cta}>
-        <a href="/join">Join</a>
-      </div>
+      {!user && (
+        <div className={styles.cta}>
+          <a href="#" onClick={(e) => { e.preventDefault(); onSignInClick(); }}>
+            Join
+          </a>
+        </div>
+      )}
     </nav>
   );
 }
