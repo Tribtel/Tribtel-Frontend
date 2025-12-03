@@ -1,0 +1,59 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4942f; /* sunset orange */
+  height: 80px; /* matches Figma */
+  width: 100%;
+  max-width: 1440px; /* matches Figma width */
+  margin: 0 auto;
+  padding-left: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 60px; /* scale logo nicely inside 90px bar */
+}
+
+.links {
+  display: flex;
+  gap: 2rem; /* healthy spacing */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #470f51;
+}
+
+.cta {
+  background: #470f51; /* deep lavender */
+  width: 187px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta a {
+  color: #fdc959; /* golden text */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.cta a:hover {
+  text-decoration: underline;
+  color: #fff;
+}

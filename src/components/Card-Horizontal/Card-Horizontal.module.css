@@ -1,0 +1,83 @@
+.cardH {
+    display: flex;
+    align-items: stretch;          /* image + content same height */
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    background: #fff;
+    max-width: 800px;
+    min-height: 200px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .cardH:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+  
+  /* Image on the left */
+  .image {
+    width: 240px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;                /* don’t let image shrink */
+  }
+  
+  /* Content on the right */
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* pushes actions to bottom */
+    padding: 1rem 1.25rem;
+    flex: 1;
+  }
+  
+  .textBlock {
+    flex-grow: 1;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+    margin: 0 0 0.25rem;
+    font-weight: 600;
+    color: #470f51;
+  }
+  
+  .location {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .rating {
+    font-size: 1rem;
+    color: #fbbf24; /* Gold stars */
+    margin-bottom: 0.5rem;
+  }
+  
+  .ratingValue {
+    font-size: 0.85rem;
+    color: #374151;
+    margin-left: 0.25rem;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #470f51;
+    margin-top: 0.5rem;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end; /* push CTA to far right */
+    margin-top: 1rem;
+  }
+  

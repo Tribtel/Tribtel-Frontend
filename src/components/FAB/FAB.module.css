@@ -1,0 +1,49 @@
+.fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  
+    background-color: #470f51; /* deep lavender default */
+    color: #fdc959;            /* golden default for content */
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 9999;
+  
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .fab:hover,
+  .fab:active {
+    background-color: #f4942f; /* orange background */
+    color: #470f51;            /* deep lavender for content */
+  }
+  
+  .iconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: inherit; /* inherit from .fab */
+  }
+  
+  .caption {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: inherit; 
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; 
+  }
+  

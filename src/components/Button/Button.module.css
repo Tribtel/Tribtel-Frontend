@@ -1,0 +1,52 @@
+/* Base button styles shared by all variants */
+.button {
+  font-family: inherit; /* Inherit font from parent */
+  font-size: 1rem; /* Standard text size */
+  padding: 0.6rem 1.2rem; /* Vertical and horizontal padding */
+  border-radius: 0; /* No rounded corners */
+  cursor: pointer; /* Show pointer on hover */
+  border: none; /* Remove default border */
+  transition: background 0.2s ease; /* Smooth hover effect */
+}
+
+/* Primary button: main action (Deep Lavender) */
+.primary {
+  background: #470f51;
+  color: #fdc959;
+}
+
+.primary:hover {
+  background: #2b0332; /* Deeper lavender on hover */
+}
+
+.primary:active {
+  background: #fdc959;
+  color: #470f51;
+}
+
+/* Secondary button: less important action (transparent) */
+.secondary {
+  background: transparent;
+  color: #470f51;
+  border: 2px solid #470f51;
+}
+
+.secondary:hover {
+  background: #ffffff; /* White on hover */
+  border: none;
+}
+
+.secondary:active {
+  background: #fdc959;
+  color: #ffffff;
+}
+/* Accessibility: show focus for keyboard users */
+.button:focus {
+  outline: 2px solid #fdc959;
+  outline-offset: 1.5px;
+}
+
+/* Remove the default focus outline */
+.button:focus {
+  outline: none;
+}

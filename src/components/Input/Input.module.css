@@ -1,0 +1,39 @@
+/* Container for label + input + error */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* Label above the input */
+.label {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: #1e1e1e; /* Deep lavender */
+}
+
+/* Base input styles */
+.input {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0; /* Square corners to match buttons */
+  transition: border-color 0.2s ease;
+}
+
+/* Focus state */
+.input:focus {
+  outline: none;
+  border-color: #470f51; /* Highlight with brand color */
+}
+
+/* Error state */
+.errorInput {
+  border-color: #dc2626; /* Red border if error */
+}
+
+.error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 0.2rem;
+}
