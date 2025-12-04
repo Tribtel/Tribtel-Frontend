@@ -16,13 +16,13 @@ interface FormData {
 };
 
 // AuthModal component definition
-const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
-  const { login } = useAuth();// Access login function from global auth state
+const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultSignUp }) => {
+  const { signIn, signUp } = useAuth();// Access login function from global auth state
 
- // State to toggle between sign-in and sign-up forms
- const [isSignUp, setIsSignUp] = useState(false);
+ // State to toggle between sign-in and sign-up forms (Array ([isSignUp, setIsSignUp]))
+ const [isSignUp, setIsSignUp] = useState(defaultSignUp || false);
 
- // State to hold form data
+ // State to hold form data (Array ([formData, setFormData]))
  const [formData, setFormData] = useState<FormData>({ username: '', email: '', password: '' });
 
  // State for feedback (success/error messages)
@@ -42,35 +42,19 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
 
     // Determine endpoint based on sign-in or sign-up
     try {
-      const endpoint = isSignUp
-        ? "http://localhost:4000/api/users/signup"
-        : "http://localhost:4000/api/users/signin";
-
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-  //Function to check for errors and handle response from server - output message.
-   if (!res.ok) {
-        const errData = await res.json();
-        setError(errData.error || "Something went wrong");
-        return;
+      if (isSignUp) {
+        await signUp(formData.username!, formData.email, formData.password);
+        setSuccess("Sign-up successful!");
+      } else {
+        await signIn(formData.email, formData.password);
+        setSuccess("Sign-in successful!");
       }
+      setTimeout(onClose, 1500); // Close modal after success
+    } catch (err: any) {
+      setError(err.message || "Authentication failed");
+    };
 
-      const userData = await res.json(); //get user data from response
-      login(userData); //update global auth state
-
-      setSuccess(isSignUp ? "Sign-up successful!": "Sign-in successful!");
-      setTimeout(() => {
-        onClose(); //close modal after success
-      }, 1500);
-
-    } catch (err) {
-      setError("Network error:" + err);
-    }
-  };
+  }; // close handleSubmit
 
   // Function to handle Google OAuth authentication
   const handleGoogleAuth = () => {
@@ -86,7 +70,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         <span className="close" onClick={onClose}>
           &times;
         </span>
-        <h2>User Authentication</h2>
+        <h2>Welcome Triber</h2>
 
         {/* Tabs */}
         <div className="tabs">

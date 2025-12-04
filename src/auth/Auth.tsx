@@ -2,19 +2,21 @@
 //It provides the authentication context to the entire application
 //It manages user login state and provides functions to log in and log out
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Define types for user and context
 interface User {
   username: string;
   email: string;
+  token: string; // Authentication token
 }
 
 // Define the shape of the authentication context
 interface AuthContextType {
   user: User | null;
-  login: (user: User) => void;
-  logout: () => void;
+  signIn: (email: string, password: string) => Promise <void>;
+  signUp: (username: string, email: string, password: string) => Promise<void>;
+  signOut: () => void;
 }
 
 // Create the authentication context
@@ -24,11 +26,52 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  const login = (user: User) => setUser(user);
-  const logout = () => setUser(null);
+  //Load user from local storage or API on mount (not implemented here)
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  // Function to handle user sign up - (API call to backend)
+  const signUp = async (username: string, email: string, password: string) => {
+    const res = await fetch("http://localhost:4000/api/users/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, email, password }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "Sign up failed");
+
+    const userData: User = { username: data.username, email: data.email, token: data.token };
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+  };
+
+  // Function to handle user sign in-(API call to backend)
+  const signIn = async (email: string, password: string) => {
+    const res = await fetch("http://localhost:4000/api/users/signin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.message || "Sign in failed");
+
+    const userData: User = { username: data.username, email: data.email, token: data.token };
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+  };
+
+  // Function to handle user sign out
+  const signOut = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, signIn, signUp, signOut }}>
       {children}
     </AuthContext.Provider>
   );
