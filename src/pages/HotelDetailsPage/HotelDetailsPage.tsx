@@ -1,6 +1,7 @@
 // src/pages/HotelDetailPage.tsx
 import { useParams } from "react-router-dom";
 import styles from "./HotelDetailsPage.module.css";
+import MainLayout from "../../layout/MainLayout";
 
 interface Room {
   id: number;
@@ -56,6 +57,7 @@ export default function HotelDetailPage() {
   if (!hotel) return <p>Hotel not found</p>;
 
   return (
+    <MainLayout>
     <section className={styles.detail}>
       <img src={hotel.image} alt={hotel.name} className={styles.hero} />
       <div className={styles.info}>
@@ -78,5 +80,6 @@ export default function HotelDetailPage() {
         ))}
       </div>
     </section>
+    </MainLayout>
   );
 }

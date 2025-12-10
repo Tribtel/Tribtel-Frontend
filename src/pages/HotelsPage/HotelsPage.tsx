@@ -1,5 +1,6 @@
 // src/pages/HotelsPage.tsx
 import { Link } from "react-router-dom";
+import MainLayout from "../../layout/MainLayout";
 import styles from "./HotelsPage.module.css";
 
 interface Room {
@@ -47,6 +48,7 @@ const hotels: Hotel[] = [
 
 export default function HotelsPage() {
   return (
+    <MainLayout>
     <section className={styles.hotels}>
       <h2>Our Hotels</h2>
       <div className={styles.grid}>
@@ -80,5 +82,6 @@ export default function HotelsPage() {
         ))}
       </div>
     </section>
+    </MainLayout>
   );
 }
