@@ -10,7 +10,7 @@ interface NavbarProps {
 export default function Navbar({ onSignInClick }: NavbarProps) {
 
   // Access global auth state
-  const { user, logout } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <nav className={styles.navbar}>
@@ -40,7 +40,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
           <>
             <li><Link to="/profile">{user.username}</Link></li>
             <li>
-              <a href="#" onClick={(e) => { e.preventDefault(); logout(); }}>
+              <a href="#" onClick={(e) => { e.preventDefault(); signOut(); }}>
                 Sign out
               </a>
             </li>

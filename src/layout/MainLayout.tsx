@@ -23,17 +23,15 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         
         {/* Navbar gets a handler to open modal */}
         <Navbar onSignInClick={() => setIsAuthOpen(true)} />
-
         <HeroSection />
+        {/* Page specific content/section render here */}
+        <main className={styles.content}>{children}</main>
         <LocationSection />
         <Footer />
-
         <FAB onClick={() => console.log("FAB clicked!")} />
-
         {/* Auth modal controlled here */}
         <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
 
-        <main className={styles.content}>{children}</main>
       </div>
     </AuthProvider>
   );

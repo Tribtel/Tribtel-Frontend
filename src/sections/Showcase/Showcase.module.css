@@ -1,21 +1,14 @@
-.offers {
-  padding: 6rem 3rem 2rem;
-  background: #470F51;
+.showcase {
+  padding: 8rem 3rem 2rem;
+  background: #fff5e1;
 }
 
-.offers h2 {
+.showcase h2 {
   text-align: left;
   font-family: "Michroma", sans-serif;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #fdc959;
-}
-
-.offers p {
-  text-align: left;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  color: #fff;
+  color: #470F51;
 }
 
 .grid {
@@ -32,7 +25,7 @@
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 100%;
-  height: 600px;
+  height: 350px;
   overflow: hidden;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -68,17 +61,7 @@
   color: #fff;
 }
 
-.badge {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.3rem 0.6rem;
-  background: #200025;
-  color: #fdc959;
-  font-weight: bold;
-  border-radius: 1px;
-}
-
-/* Arrow indicator (same as Showcase) */
+/* Arrow indicator wrapper */
 .arrow {
   position: absolute;
   bottom: 1rem;
@@ -88,10 +71,12 @@
   justify-content: flex-end;
 }
 
+/* Right arrow icon (visible initially) */
 .rightArrow {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* Left arrow shaft (collapsed initially) */
 .leftArrow {
   display: block;
   width: 0;
@@ -99,7 +84,7 @@
   background-color: #fff;
   margin-left: 4px;
   position: relative;
-  transition: width 0.4s ease 0.2s;
+  transition: width 0.4s ease 0.2s; /* delayed start */
 }
 
 .leftArrow::before,
@@ -107,7 +92,7 @@
   content: "";
   position: absolute;
   right: 0;
-  width: 0;
+  width: 0; /* collapsed initially */
   height: 2px;
   background-color: #fff;
   transform: rotate(0deg);
@@ -130,13 +115,14 @@
   transform: translateY(-8px);
 }
 
+/* Hover animation */
 .card:hover .rightArrow {
-  opacity: 0;
-  transform: translateX(20px);
+  opacity: 0;                 /* fades out */
+  transform: translateX(20px); /* slides right */
 }
 
 .card:hover .leftArrow {
-  width: 64px;
+  width: 64px;                /* shaft extends */
 }
 
 .card:hover .leftArrow::before {
@@ -147,4 +133,10 @@
 .card:hover .leftArrow::after {
   width: 8px;
   transform: rotate(-40deg);
+}
+
+.cta {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
 }

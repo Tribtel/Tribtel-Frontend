@@ -1,0 +1,52 @@
+.membership {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  background: #fff;
+}
+
+.left {
+  flex: 1;
+  text-align: left;
+}
+
+.left h3 {
+  font-family: "Michroma", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #470F51;
+}
+
+.left p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: #494949;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.right {
+  flex: 1;
+}
+
+.right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.right li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.right li::before {
+  content: "✓";
+  color: #470F51;
+  margin-right: 0.5rem;
+}

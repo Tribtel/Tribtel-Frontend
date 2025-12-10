@@ -1,0 +1,63 @@
+.reviews {
+  padding: 8rem 3rem 2rem;
+  background: #f0f0f0; /* softer background for testimonials */
+}
+
+.reviews h2 {
+  text-align: left;
+  font-family: "Michroma", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #470F51;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-items: start;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  color: #470F51;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  padding: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  transform: translateY(-6px);
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.overlay h3 {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  color: #fdc959; /* highlight reviewer name */
+}
+
+.comment {
+  font-style: italic;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.rating {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}

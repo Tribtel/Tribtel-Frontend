@@ -9,6 +9,7 @@
   margin: 0 auto;
   padding-left: 2rem;
   position: sticky;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   top: 0;
   z-index: 1000;
 }

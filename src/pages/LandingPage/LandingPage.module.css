@@ -5,6 +5,16 @@
     padding: 2rem;
   }
   
+  /* Search bar wrapper to position it over the hero section */
+  .searchWrapper {
+  position: absolute;
+  top: 95%;              /* halfway down hero */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;           /* above hero */
+  width: 80%;            /* responsive width */
+  max-width: 900px;
+}
   @media (max-width: 1024px) {
     .landingPage {
       gap: 3rem;

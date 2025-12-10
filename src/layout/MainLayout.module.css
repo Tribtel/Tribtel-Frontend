@@ -6,20 +6,20 @@
   
   .content {
     flex: 1;
-    padding: 2rem;
+    padding: 0;
   }
   
   /* Tablet */
   @media (max-width: 1024px) {
     .content {
-      padding: 1.5rem;
+      padding: 0;
     }
   }
   
   /* Mobile */
   @media (max-width: 768px) {
     .content {
-      padding: 1rem;
+      padding: 0;
     }
   
     .mainLayout {
