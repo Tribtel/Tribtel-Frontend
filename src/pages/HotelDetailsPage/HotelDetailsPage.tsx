@@ -1,6 +1,8 @@
 // src/pages/HotelDetailPage.tsx
 import { useParams } from "react-router-dom";
 import styles from "./HotelDetailsPage.module.css";
+import HotelsHero from "../HotelsPage/HotelsHero";
+import SearchBar from "../../components/Searchbar/Searchbar";
 import MainLayout from "../../layout/MainLayout";
 
 interface Room {
@@ -28,11 +30,11 @@ const hotelData: Record<number, Hotel> = {
     location: "Cape Town",
     rating: 4.7,
     description: "A seaside escape with panoramic ocean views and luxury amenities.",
-    image: "src/assets/images/hotel1.svg",
+    image: "src/assets/images/Hotel/Hotel_3.svg",
     rooms: [
-      { id: 101, name: "Sea View Suite", price: "250/night", image: "src/assets/images/Rooms_1.svg" },
-      { id: 102, name: "Standard Room", price: "120/night", image: "src/assets/images/Rooms_2.svg" },
-      { id: 103, name: "Penthouse", price: "400/night", image: "src/assets/images/Rooms_3.svg" }
+      { id: 101, name: "Sea View Suite", price: "250/night", image: "src/assets/images/Rooms/Rooms_1.svg" },
+      { id: 102, name: "Standard Room", price: "120/night", image: "src/assets/images/Rooms/Rooms_2.svg" },
+      { id: 103, name: "Penthouse", price: "400/night", image: "src/assets/images/Rooms/Rooms_3.svg" }
     ]
   },
   2: {
@@ -41,11 +43,11 @@ const hotelData: Record<number, Hotel> = {
     location: "Durban",
     rating: 4.8,
     description: "Relax in lush gardens with family-friendly amenities and spacious villas.",
-    image: "src/assets/images/hotel2.svg",
+    image: "src/assets/images/Hotel/Hotel_2.svg",
     rooms: [
-      { id: 201, name: "Villa Deluxe", price: "300/night", image: "src/assets/images/Rooms_3.svg" },
-      { id: 202, name: "Family Room", price: "180/night", image: "src/assets/images/Rooms_2.svg" },
-      { id: 203, name: "Garden Suite", price: "220/night", image: "src/assets/images/Rooms_1.svg" }
+      { id: 201, name: "Villa Deluxe", price: "300/night", image: "src/assets/images/Rooms/Rooms_3.svg" },
+      { id: 202, name: "Family Room", price: "180/night", image: "src/assets/images/Rooms/Rooms_2.svg" },
+      { id: 203, name: "Garden Suite", price: "220/night", image: "src/assets/images/Rooms/Rooms_1.svg" }
     ]
   }
 };
@@ -57,7 +59,11 @@ export default function HotelDetailPage() {
   if (!hotel) return <p>Hotel not found</p>;
 
   return (
-    <MainLayout>
+    <MainLayout hero={<HotelsHero />}>
+      {/* Floating SearchBar */}
+        <div className={styles.searchWrapper}>
+         <SearchBar />
+        </div>
     <section className={styles.detail}>
       <img src={hotel.image} alt={hotel.name} className={styles.hero} />
       <div className={styles.info}>

@@ -1,5 +1,5 @@
 .detail {
-  padding: 6rem 3rem;
+  padding: 10rem 3rem;
   background: #fff;
 }
 
@@ -9,6 +9,17 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 2rem;
+}
+
+/* Search bar wrapper to position it over the hero section */
+  .searchWrapper {
+  position: absolute;
+  top: 70%;              /* halfway down hero */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;           /* above hero */
+  width: 80%;            /* responsive width */
+  max-width: 900px;
 }
 
 .info {

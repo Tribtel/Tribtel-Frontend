@@ -6,10 +6,11 @@ import Membership from "../../sections/Membership/Membership";
 import OffersSection from "../../sections/OffersSection/OffersSection";
 import Reviews from "../../sections/ReviewSection/ReviewSection";
 import styles from "./LandingPage.module.css";
+import HeroSection from "../../sections/HeroSection/HeroSection";
 
 export default function LandingPage() {
   return (
-    <MainLayout>
+    <MainLayout hero={<HeroSection/>}>
         {/* Floating SearchBar */}
         <div className={styles.searchWrapper}>
           <SearchBar />

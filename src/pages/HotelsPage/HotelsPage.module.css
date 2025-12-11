@@ -3,11 +3,22 @@
   background: #fff5e1;
 }
 
+.searchWrapper {
+  position: absolute;
+  top: 70%; /* relative to hero */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 80%;
+  max-width: 900px;
+}
+
 .hotels h2 {
   font-family: "Michroma", sans-serif;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #470F51;
+  text-align: center;
 }
 
 .grid {
@@ -17,60 +28,164 @@
 }
 
 .hotelCard {
+  position: relative;
   background: #470F51;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 2px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.heroSection {
+  position: relative;
+  height: 400px; /* hero height */
+}
+
+.heroSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hotelCard img {
   width: 100%;
-  height: 250px;
+  height: 400px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 .overlay {
-  padding: 1rem;
-  background: rgba(0,0,0,0.6);
+  position: absolute;
+  inset: 0; /* cover entire heroSection */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertically center */
+  padding: 0;
+  background: rgba(0,0,0,0.4); /* subtle tint for readability */
 }
 
+.overlayLeft {
+  flex: 1;
+  padding: 2rem;
+}
+
+.overlayLeft h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fdc959;
+}
+
+.overlayLeft p {
+  margin: 0.3rem 0;
+  color: #fff;
+}
+
+.overlayRight {
+  flex: none;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: flex-end;
+  text-align: right;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,       /* fully transparent at left edge */
+    rgba(0, 0, 0, 0.4) 40%,    /* starts fading in */
+    rgba(0, 0, 0, 0.7) 100%    /* strong dark tint at right edge */
+  );
+
+  backdrop-filter: blur(2px);  /* subtle blur for glassy feel */
+  height: 400px;
+  padding: 2rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #eee;
+  margin-bottom: 0.5rem;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.goldSecondary {
+  background: transparent;       /* no fill */
+  border: 2px solid #fdc959;     /* gold outline */
+  color: #fdc959;                /* gold text */
+}
+
+.goldSecondary:hover {
+  background: #fdc959;           /* gold fill on hover */
+  color: #470F51;                /* purple text for contrast */
+}
+
+/* Rooms grid inside hotel card */
 .roomsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 2fr));
   gap: 1rem;
   padding: 1rem;
-  background: #333;
+  background: #fdc959;
 }
 
 .roomCard {
   position: relative;
-  background: #222;
-  color: #fff;
+  border-radius: 1px;
   overflow: hidden;
+  text-decoration: none;
+  color: #fff;
   transition: transform 0.3s ease;
+}
+
+.roomCard:hover {
+  transform: scale(1.05);
 }
 
 .roomCard img {
   width: 100%;
-  height: 120px;
+  height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .roomOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 0.5rem;
   background: rgba(0,0,0,0.6);
 }
 
-.roomCard:hover {
-  transform: translateY(-4px);
+.roomOverlay h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fdc959;
+}
+
+.roomOverlay p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #ddd;
 }
 
 .viewMore {
   align-self: center;
   justify-self: end;
-  color: #fdc959;
+  color: #470F51;
   font-weight: bold;
   text-decoration: none;
   margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.viewMore:hover {
+  color: #fff;
 }

@@ -10,10 +10,11 @@ import styles from "./MainLayout.module.css";
 
 interface MainLayoutProps {
   children: ReactNode;
+  hero?: ReactNode; // Interchangeble hero section
 }
 
-const MainLayout = ({ children }: MainLayoutProps) => {
-
+const MainLayout = ({ children, hero }: MainLayoutProps) => {
+  
   //local state for modal open/close
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
@@ -23,7 +24,8 @@ const MainLayout = ({ children }: MainLayoutProps) => {
         
         {/* Navbar gets a handler to open modal */}
         <Navbar onSignInClick={() => setIsAuthOpen(true)} />
-        <HeroSection />
+        {/* Conditional Hero Section */}
+        {hero ? hero :<HeroSection />}
         {/* Page specific content/section render here */}
         <main className={styles.content}>{children}</main>
         <LocationSection />

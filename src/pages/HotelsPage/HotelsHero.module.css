@@ -1,0 +1,54 @@
+/*styles*/
+
+
+.heroSection {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.Image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.gradientOverlay {
+  position: absolute;
+  height: 80%;
+  inset: 0;
+  filter: blur(1px);
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(35, 1, 40, 0.6) 30%,
+    rgba(71, 15, 81, 0) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 2rem;
+  color: #fff;
+}
+
+.title {
+  font-family: "Michroma", sans-serif;
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #fdc959;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
