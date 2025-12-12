@@ -3,7 +3,16 @@ import { useParams } from "react-router-dom";
 import styles from "./HotelDetailsPage.module.css";
 import HotelsHero from "../HotelsPage/HotelsHero";
 import SearchBar from "../../components/Searchbar/Searchbar";
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 import MainLayout from "../../layout/MainLayout";
+
+//Imported images
+import Hotel3 from "../../assets/images/Hotel/Hotel_3.svg";
+import Hotel2 from "../../assets/images/Hotel/Hotel_2.svg";
+import Room1 from "../../assets/images/Rooms/Rooms_1.svg";
+import Room2 from "../../assets/images/Rooms/Rooms_9.svg";
+import Room3 from "../../assets/images/Rooms/Rooms_3.svg";
 
 interface Room {
   id: number;
@@ -22,7 +31,7 @@ interface Hotel {
   rooms: Room[];
 }
 
-// Mock data (replace with API or context later)
+//Mock hotel data - replace with real data fetching in production //API integration
 const hotelData: Record<number, Hotel> = {
   1: {
     id: 1,
@@ -30,11 +39,11 @@ const hotelData: Record<number, Hotel> = {
     location: "Cape Town",
     rating: 4.7,
     description: "A seaside escape with panoramic ocean views and luxury amenities.",
-    image: "src/assets/images/Hotel/Hotel_3.svg",
+    image: Hotel3,
     rooms: [
-      { id: 101, name: "Sea View Suite", price: "250/night", image: "src/assets/images/Rooms/Rooms_1.svg" },
-      { id: 102, name: "Standard Room", price: "120/night", image: "src/assets/images/Rooms/Rooms_2.svg" },
-      { id: 103, name: "Penthouse", price: "400/night", image: "src/assets/images/Rooms/Rooms_3.svg" }
+      { id: 101, name: "Sea View Suite", price: "250/night", image: Room1 },
+      { id: 102, name: "Standard Room", price: "120/night", image: Room2 },
+      { id: 103, name: "Penthouse", price: "400/night", image: Room3 }
     ]
   },
   2: {
@@ -43,14 +52,15 @@ const hotelData: Record<number, Hotel> = {
     location: "Durban",
     rating: 4.8,
     description: "Relax in lush gardens with family-friendly amenities and spacious villas.",
-    image: "src/assets/images/Hotel/Hotel_2.svg",
+    image: Hotel2,
     rooms: [
-      { id: 201, name: "Villa Deluxe", price: "300/night", image: "src/assets/images/Rooms/Rooms_3.svg" },
-      { id: 202, name: "Family Room", price: "180/night", image: "src/assets/images/Rooms/Rooms_2.svg" },
-      { id: 203, name: "Garden Suite", price: "220/night", image: "src/assets/images/Rooms/Rooms_1.svg" }
+      { id: 201, name: "Villa Deluxe", price: "300/night", image: Room3 },
+      { id: 202, name: "Family Room", price: "180/night", image: Room2 },
+      { id: 203, name: "Garden Suite", price: "220/night", image: Room1 }
     ]
   }
 };
+
 
 export default function HotelDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -66,10 +76,20 @@ export default function HotelDetailPage() {
         </div>
     <section className={styles.detail}>
       <img src={hotel.image} alt={hotel.name} className={styles.hero} />
+      <div className={styles.backBtnWrapper}>
+        <Link to="/hotels" className={styles.backBtn}>
+          <span className={styles.chevron} aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className={styles.icon}>
+               <path d="M15 18L9 12l6-6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
+          <span className={styles.caption}>Back to Hotels</span>
+        </Link>
+      </div>
       <div className={styles.info}>
         <h2>{hotel.name}</h2>
         <p>{hotel.location}</p>
-        <p>⭐ {hotel.rating}</p>
+        <p>{"\u2B50"} {hotel.rating}</p>
         <p>{hotel.description}</p>
       </div>
 
@@ -79,8 +99,11 @@ export default function HotelDetailPage() {
           <div key={room.id} className={styles.roomCard}>
             <img src={room.image} alt={room.name} />
             <div className={styles.roomOverlay}>
-              <h4>{room.name}</h4>
-              <p>{room.price}</p>
+              <div className = {styles.roomInfo}>
+                <h4>{room.name}</h4>
+                <p>{room.price}</p>
+                <Button className={styles.bookBtn} variant="secondary">Book Now</Button>
+              </div>
             </div>
           </div>
         ))}

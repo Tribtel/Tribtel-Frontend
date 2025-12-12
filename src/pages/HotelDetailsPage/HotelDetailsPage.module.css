@@ -5,20 +5,19 @@
 
 .hero {
   width: 100%;
-  height: 300px;
+  height: 350px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 2px;
   margin-bottom: 2rem;
 }
 
-/* Search bar wrapper to position it over the hero section */
-  .searchWrapper {
+.searchWrapper {
   position: absolute;
-  top: 70%;              /* halfway down hero */
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;           /* above hero */
-  width: 80%;            /* responsive width */
+  z-index: 10;
+  width: 80%;
   max-width: 900px;
 }
 
@@ -38,6 +37,63 @@
   color: #333;
 }
 
+.backBtnWrapper {
+  margin: 1rem 0;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #470F51;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.chevron {
+  color: #470F51;
+  line-height: 1;
+  pointer-events: none;
+  display: inline-block;
+}
+
+.chevron .icon {
+  width: 24px;
+  height: 24px;
+  color: #470F51;
+}
+
+.caption {
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.backBtn:hover {
+  width: auto;
+  padding: 0 1rem;
+  border-radius: 25px; /* pill shape */
+  background: #470F51;
+  color: #fdc959;
+  text-decoration: none;
+}
+
+.backBtn:hover .chevron .icon,
+.backBtn:hover .caption {
+  color: #fdc959;
+  opacity: 1;
+  transform: translateX(0);
+  text-decoration: none;
+}
+
 .roomsHeading {
   font-size: 1.5rem;
   margin: 2rem 0 1rem;
@@ -53,7 +109,7 @@
 .roomCard {
   background: #470F51;
   color: #fff;
-  border-radius: 6px;
+  border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -61,7 +117,7 @@
 
 .roomCard img {
   width: 100%;
-  height: 150px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -69,18 +125,48 @@
   padding: 1rem;
 }
 
-.roomOverlay h4 {
+.roomOverlay h4,
+.roomInfo h4 {
   margin: 0.25rem 0;
   font-size: 1.1rem;
   color: #fdc959;
 }
 
-.roomOverlay p {
+.roomOverlay p,
+.roomInfo p {
   margin: 0.25rem 0;
   color: #fff;
+}
+
+.roomInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bookBtn {
+  color: #fdc959;
+  border: 2px solid #fdc959;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.bookBtn:hover {
+  background: #fdc959;
+  color: #470F51;
+  transform: translateY(-2px);
 }
 
 .roomCard:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+@media (max-width: 600px) {
+  .hero {
+    height: 200px;
+  }
+
+  .roomsGrid {
+    grid-template-columns: 1fr;
+  }
 }

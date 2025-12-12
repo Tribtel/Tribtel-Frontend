@@ -1,9 +1,11 @@
 // src/pages/HotelsPage.tsx
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import MainLayout from "../../layout/MainLayout";
 import HotelsHero from "./HotelsHero";
 import SearchBar from "../../components/Searchbar/Searchbar";
 import Button from "../../components/Button/Button";
+import GalleryModal from "../../components/GalleryModal/GalleryModal";
 import styles from "./HotelsPage.module.css";
 
 interface Room {
@@ -50,6 +52,23 @@ const hotels: Hotel[] = [
 ];
 
 export default function HotelsPage() {
+
+   const [openGallery, setOpenGallery] = useState(false);
+   const [activeHotelId, setActiveHotelId] = useState<number | null>(null);
+
+  const hotelImages: Record<number, string[]> = {
+  1: [
+    "src/assets/images/Hotel/Hotel_1.svg",
+    "src/assets/images/Rooms/Rooms_2.svg",
+    "src/assets/images/Rooms/Rooms_3.svg"
+  ],
+  2: [
+    "src/assets/images/Hotel/Hotel_2.svg",
+    "src/assets/images/Rooms/Rooms_1.svg",
+    "src/assets/images/Rooms/Rooms_3.svg"
+  ]
+};
+
   return (
     <MainLayout hero={<HotelsHero />}>
       {/* Floating SearchBar */}
@@ -80,9 +99,9 @@ export default function HotelsPage() {
                       : "A sanctuary where blossoms meet gentle breezes. Warm hospitality awaits you in Durban's green embrace."}
                   </p>
                   <div className={styles.ctaGroup}>
-                    <Link to={`/hotels/${hotel.id}/gallery`} className={styles.ctaBtn}>
-                      <Button variant="secondary" className={styles.goldSecondary}>View Gallery</Button>
-                    </Link>
+                
+                    <Button variant="secondary" className={styles.goldSecondary} onClick={() => { setActiveHotelId(hotel.id); setOpenGallery(true); }}>View Gallery</Button>
+  
                     <Link to={`/hotels/${hotel.id}`} className={styles.ctaBtn}>
                       <Button variant="primary">See Rooms</Button>
                     </Link>
@@ -107,6 +126,14 @@ export default function HotelsPage() {
           ))}
         </div>
       </section>
+
+        {/* Single modal at root */}
+      <GalleryModal
+        isOpen={openGallery}
+        onClose={() => setOpenGallery(false)}
+        images={hotelImages[activeHotelId ?? 1]} // later: swap per hotel using activeHotelId
+      />
+
     </MainLayout>
   );
 }
