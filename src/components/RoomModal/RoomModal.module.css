@@ -1,0 +1,73 @@
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-family: "Michroma", sans-serif;
+  font-size: 1.5rem;
+  color: #470F51;
+  margin-bottom: 1rem;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem 0;
+}
+
+.carousel img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.navBtn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #470F51;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navBtn:hover {
+  color: #fdc959;
+}
+
+/* Place left/right buttons */ 
+.navBtn:first-of-type { left: 0; } 
+.navBtn:last-of-type { right: 0; }
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.price {
+  font-weight: medium;
+  font-size: 1.2rem;
+  color: #470F51;
+}

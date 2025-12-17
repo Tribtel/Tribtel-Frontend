@@ -1,10 +1,12 @@
 // src/pages/HotelDetailPage.tsx
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import styles from "./HotelDetailsPage.module.css";
 import HotelsHero from "../HotelsPage/HotelsHero";
 import SearchBar from "../../components/Searchbar/Searchbar";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import RoomModal from "../../components/RoomModal/RoomModal";
 import MainLayout from "../../layout/MainLayout";
 
 //Imported images
@@ -18,7 +20,7 @@ interface Room {
   id: number;
   name: string;
   price: string;
-  image: string;
+  images: string[];
 }
 
 interface Hotel {
@@ -41,9 +43,9 @@ const hotelData: Record<number, Hotel> = {
     description: "A seaside escape with panoramic ocean views and luxury amenities.",
     image: Hotel3,
     rooms: [
-      { id: 101, name: "Sea View Suite", price: "250/night", image: Room1 },
-      { id: 102, name: "Standard Room", price: "120/night", image: Room2 },
-      { id: 103, name: "Penthouse", price: "400/night", image: Room3 }
+      { id: 101, name: "Sea View Suite", price: "250/night", images: [Room1, Room2, Room3] },
+      { id: 102, name: "Standard Room", price: "120/night", images: [Room2, Room3] },
+      { id: 103, name: "Penthouse", price: "400/night", images: [Room3, Room1] }
     ]
   },
   2: {
@@ -54,9 +56,9 @@ const hotelData: Record<number, Hotel> = {
     description: "Relax in lush gardens with family-friendly amenities and spacious villas.",
     image: Hotel2,
     rooms: [
-      { id: 201, name: "Villa Deluxe", price: "300/night", image: Room3 },
-      { id: 202, name: "Family Room", price: "180/night", image: Room2 },
-      { id: 203, name: "Garden Suite", price: "220/night", image: Room1 }
+      { id: 201, name: "Villa Deluxe", price: "300/night", images: [Room3, Room2, Room1] },
+      { id: 202, name: "Family Room", price: "180/night", images: [Room2, Room3] },
+      { id: 203, name: "Garden Suite", price: "220/night", images: [Room1, Room3] }
     ]
   }
 };
@@ -65,15 +67,16 @@ const hotelData: Record<number, Hotel> = {
 export default function HotelDetailPage() {
   const { id } = useParams<{ id: string }>();
   const hotel = hotelData[Number(id)];
+  const [activeRoom, setActiveRoom] = useState<Room | null>(null);
 
   if (!hotel) return <p>Hotel not found</p>;
 
   return (
     <MainLayout hero={<HotelsHero />}>
-      {/* Floating SearchBar */}
-        <div className={styles.searchWrapper}>
-         <SearchBar />
-        </div>
+    {/* Floating SearchBar */}
+     <div className={styles.searchWrapper}>
+      <SearchBar />
+     </div>
     <section className={styles.detail}>
       <img src={hotel.image} alt={hotel.name} className={styles.hero} />
       <div className={styles.backBtnWrapper}>
@@ -97,7 +100,14 @@ export default function HotelDetailPage() {
       <div className={styles.roomsGrid}>
         {hotel.rooms.map((room) => (
           <div key={room.id} className={styles.roomCard}>
-            <img src={room.image} alt={room.name} />
+            <img src={room.images && room.images.length ? room.images[0] : ""} alt={room.name} />
+             {/* Overlay button */}
+            <div className={styles.viewMoreOverlay}>
+               <Button variant="secondary" className={styles.viewMoreBtn} onClick={() => setActiveRoom(room)}>
+                 View More
+               </Button>
+            </div>
+
             <div className={styles.roomOverlay}>
               <div className = {styles.roomInfo}>
                 <h4>{room.name}</h4>
@@ -109,6 +119,17 @@ export default function HotelDetailPage() {
         ))}
       </div>
     </section>
+
+    {/* Room Details Modal */}
+    <RoomModal
+      isOpen={!!activeRoom}
+      onClose={() => setActiveRoom(null)}
+      id={activeRoom?.id ?? 0}
+      name={activeRoom?.name ?? ""}
+      price={activeRoom?.price ?? ""}
+      images={activeRoom ? activeRoom.images : []}
+    />
+
     </MainLayout>
   );
 }

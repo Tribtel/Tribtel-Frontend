@@ -107,6 +107,7 @@
 }
 
 .roomCard {
+  position: relative;
   background: #470F51;
   color: #fff;
   border-radius: 2px;
@@ -119,6 +120,41 @@
   width: 100%;
   height: 250px;
   object-fit: cover;
+  display: block;
+}
+
+.viewMoreOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(71, 15, 81, 0.2); /* faint purple tint */
+  opacity: 0; /* hidden by default */
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.roomCard:hover .viewMoreOverlay {
+  opacity: 1; /* show overlay on hover */
+  background: rgba(71, 15, 81, 0.2);
+}
+
+.viewMoreBtn {
+  background: rgba(253, 201, 89, 0.85); /* semi-transparent gold */
+  color: #470F51;
+  border: none;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.viewMoreBtn:hover {
+  background: #fdc959; /* solid gold */
+  transform: scale(1.05);
 }
 
 .roomOverlay {
@@ -161,6 +197,56 @@
   transform: translateY(-6px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
+
+/* Modal styles */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 4px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.carousel img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  color: #470F51;
+}
+
 @media (max-width: 600px) {
   .hero {
     height: 200px;
