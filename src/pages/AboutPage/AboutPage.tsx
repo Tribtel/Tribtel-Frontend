@@ -1,8 +1,15 @@
 //Build trust and tell the brand story
 
 // src/pages/AboutPage/AboutPage.tsx
+
 import MainLayout from "../../layout/MainLayout";
+import CardV from "../../components/Card-Vertical/Card-Vertical";
+import Button from "../../components/Button/Button";
 import styles from "./AboutPage.module.css";
+
+import Team1 from "../../assets/icons/profile.svg";
+import Team2 from "../../assets/icons/profile.svg";
+import Team3 from "../../assets/icons/profile.svg";
 
 export default function AboutPage() {
   return (
@@ -28,14 +35,32 @@ export default function AboutPage() {
       <section className={styles.teamSection}>
         <h2>Meet the Team</h2>
         <div className={styles.teamGrid}>
-          <div className={styles.teamMember}>
-            <img src="/images/team1.jpg" alt="Jane Doe" />
-            <h3>Jane Doe</h3>
-            <p>Founder & CEO</p>
-          </div>
-          {/* Add more team members */}
+          <CardV
+            title="Jane Doe"
+            description="Founder & CEO"
+            imageUrl={Team1}
+          >
+            <Button variant="secondary">Connect</Button>
+          </CardV>
+
+          <CardV
+            title="John Smith"
+            description="Head of Operations"
+            imageUrl={Team2}
+          >
+            <Button variant="secondary">Connect</Button>
+          </CardV>
+
+          <CardV
+            title="Sarah Lee"
+            description="Travel Consultant"
+            imageUrl={Team3}
+          >
+            <Button variant="secondary">Connect</Button>
+          </CardV>
         </div>
       </section>
     </MainLayout>
   );
 }
+
