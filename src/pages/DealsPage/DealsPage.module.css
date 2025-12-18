@@ -1,0 +1,24 @@
+.heroTitle {
+  font-family: "Michroma", sans-serif;
+  font-size: 2.5rem;
+  color: #470F51;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.dealsSection {
+  padding: 2rem;
+}
+
+.dealsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.ctaSection {
+  background: #f9f9f9;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}

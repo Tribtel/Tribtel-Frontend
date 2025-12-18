@@ -1,0 +1,53 @@
+.heroTitle {
+  font-family: "Michroma", sans-serif;
+  font-size: 2.5rem;
+  color: #470F51;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.storySection,
+.valuesSection,
+.teamSection {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.valuesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.valuesList li {
+  background: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #470F51;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.teamMember {
+  text-align: center;
+}
+
+.teamMember img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.teamMember h3 {
+  margin: 0.5rem 0;
+  color: #470F51;
+}

@@ -1,0 +1,25 @@
+.heroTitle {
+  font-family: "Michroma", sans-serif;
+  font-size: 2.5rem;
+  color: #470F51;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.packagesSection {
+  padding: 2rem;
+}
+
+.packagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.testimonialsSection {
+  background: #fdf6e3;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-style: italic;
+}
