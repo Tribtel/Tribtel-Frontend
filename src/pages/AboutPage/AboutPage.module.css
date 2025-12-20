@@ -1,53 +1,91 @@
-.heroTitle {
-  font-family: "Michroma", sans-serif;
-  font-size: 2.5rem;
-  color: #470F51;
-  text-align: center;
-  margin: 2rem 0;
+/* SPLIT SECTION (Story + Values) */
+.splitSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
 }
 
-.storySection,
-.valuesSection,
+.storySection {
+  background-color: #470F51; 
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.storySection h2 {
+  color: #FDC959;
+}
+
+.storySection p {
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.valuesSection {
+  background-color: #FDC959; 
+  color: #111;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* VALUES SLIDESHOW */
+.valuesSlideshow {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.valueCard {
+  background: #FDC959;
+  text-align: left;
+  padding: 1.5rem;
+  width: 80%;
+  max-width: 320px;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-120%) scale(0.95);
+  opacity: 0;
+}
+
+.valueCard.active {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  z-index: 2;
+}
+
+.valueCard svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  color: #470F51;
+}
+
+.valueCard h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.valueCard p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* TEAM SECTION */
 .teamSection {
   padding: 2rem;
-  margin-bottom: 2rem;
 }
 
-.valuesList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-}
-
-.valuesList li {
-  background: #f9f9f9;
-  padding: 1rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 500;
-  color: #470F51;
-}
-
-.teamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-}
-
-.teamMember {
+.teamSection h2 {
   text-align: center;
-}
-
-.teamMember img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.teamMember h3 {
-  margin: 0.5rem 0;
-  color: #470F51;
+  margin-bottom: 1.5rem;
 }

@@ -5,23 +5,35 @@ import Button from "../../components/Button/Button";
 import styles from "./HeroSection.module.css";
 import heroImage from "../../assets/images/hero-image.jpg";
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  //add props here if needed in the future
+  imageUrl?: string;
+  title?: string;
+  subtitle?: string;
+  showCTA?: boolean;
+}
+
+const HeroSection: React.FC <HeroSectionProps>= ({ 
+  imageUrl = heroImage, 
+  title = "Your perfect stay - one click away", 
+  subtitle = "Your perfect stay awaits with exceptional service and unforgettable moments.", 
+  showCTA = true
+}) => {
   return (
     <section className={styles.heroSection}>
       {/* Background image */}
-      <img src={heroImage} alt="Hotel Image" className={styles.heroImage} />
+      <img src={imageUrl} alt="Hotel Image" className={styles.heroImage} />
 
       {/* Gradient overlay */}
       <div className={styles.gradientOverlay}></div>
 
       {/* Content */}
       <div className={styles.content}>
-        <h1 className={styles.title}>Your perfect stay - one click away</h1>
+        <h1 className={styles.title}>{title}</h1>
         <p className={styles.subtitle}>
-          Your perfect stay awaits with exceptional service and unforgettable
-          moments.
+          {subtitle}
         </p>
-        <Button variant="primary">Explore</Button>
+        {showCTA && <Button variant="primary">Explore</Button>}
       </div>
     </section>
   );
