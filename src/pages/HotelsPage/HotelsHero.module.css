@@ -3,6 +3,7 @@
 
 .heroSection {
   position: relative;
+  padding-bottom: 12rem;
   height: 80vh;
   display: flex;
   align-items: center;

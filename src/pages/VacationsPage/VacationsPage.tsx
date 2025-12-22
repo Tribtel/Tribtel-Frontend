@@ -10,10 +10,22 @@ import Vacation1 from "../../assets/images/Holiday/Holiday_10.svg";
 import Vacation2 from "../../assets/images/Holiday/Holiday_12.svg"; 
 import Vacation3 from "../../assets/images/Holiday/Holiday_6.svg";
 
+import HeroSection from "../../sections/HeroSection/HeroSection";
+import vacationsHeroImage from "../../assets/images/Holiday/Holiday_6.svg";
+import ReviewSection from "../../sections/ReviewSection/ReviewSection";
+
 
 export default function VacationsPage() {
   return (
-    <MainLayout hero={<h1 className={styles.heroTitle}>Dream Vacations</h1>}>
+    <MainLayout
+        hero={
+          <HeroSection
+            imageUrl={vacationsHeroImage}
+            title="Dream. Explore. Discover."
+            subtitle="Vacations that came out of a movie scene."
+            showCTA={false}
+          /> 
+        }>
       <section className={styles.packagesSection}>
         <h2>Popular Packages</h2>
         <div className={styles.packagesList}>
@@ -52,13 +64,8 @@ export default function VacationsPage() {
           {/* Add more packages */}
         </div>
       </section>
-
-      <section className={styles.testimonialsSection}>
-        <h2>What Our Travelers Say</h2>
-        <blockquote>
-          “The beach package was unforgettable — everything was perfectly organized!”
-        </blockquote>
-      </section>
+    {/* Customer Reviews Section */}
+    <ReviewSection />
     </MainLayout>
   );
 }

@@ -15,21 +15,21 @@ const offers: Offer[] = [
     id: 1,
     title: "Summer Escape",
     description: "Enjoy 20% off ocean view rooms this summer.",
-    image: "src/assets/images/Features_2.svg",
+    image: "src/assets/images/Features/Features_2.svg",
     discount: "20% OFF"
   },
   {
     id: 2,
     title: "Luxury Weekend",
     description: "Book a luxury suite for 2 nights and get the 3rd free.",
-    image: "src/assets/images/Features_6.svg",
+    image: "src/assets/images/Features/Features_6.svg",
     discount: "Stay 3, Pay 2"
   },
   {
     id: 3,
     title: "Family Package",
     description: "Kids stay free in our garden villas.",
-    image: "src/assets/images/Features_3.svg",
+    image: "src/assets/images/Features/Features_3.svg",
     discount: "Kids Stay Free"
   }
 ];

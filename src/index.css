@@ -48,6 +48,7 @@ button {
   --color-green: #35f147; /* approved/corrected */
   --color-blue: #168bff; /* active */
   --color-text: #213547; /* text - overheads, captions, labels, paragraphs */
+  --color-textALT: #fdfbf3;
   --color-bg: #f5f5f5; /* general background colour */
 
   --breakpoint-mobile: 640px;

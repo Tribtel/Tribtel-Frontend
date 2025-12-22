@@ -15,9 +15,9 @@ interface Room {
 }
 
 const rooms: Room[] = [
-  { id: 1, name: "Luxury Suite", image: "src/assets/images/Rooms_1.svg", rating: 4.8, price: "250/night" },
-  { id: 2, name: "Ocean View Room", image: "src/assets/images/Rooms_2.svg", rating: 4.7, price: "180/night" },
-  { id: 3, name: "Garden Villa", image: "src/assets/images/Rooms_3.svg", rating: 4.9, price: "300/night" },
+  { id: 1, name: "Luxury Suite", image: "src/assets/images/Rooms/Rooms_1.svg", rating: 4.8, price: "250/night" },
+  { id: 2, name: "Ocean View Room", image: "src/assets/images/Rooms/Rooms_2.svg", rating: 4.7, price: "180/night" },
+  { id: 3, name: "Garden Villa", image: "src/assets/images/Rooms/Rooms_3.svg", rating: 4.9, price: "300/night" },
 ];
 
 export default function Showcase() {

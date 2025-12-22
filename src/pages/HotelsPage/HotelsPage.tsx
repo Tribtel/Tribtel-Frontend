@@ -7,6 +7,9 @@ import SearchBar from "../../components/Searchbar/Searchbar";
 import Button from "../../components/Button/Button";
 import GalleryModal from "../../components/GalleryModal/GalleryModal";
 import styles from "./HotelsPage.module.css";
+import BrandSection from "../../sections/Brand/BrandSection";
+import ReviewSection from "../../sections/ReviewSection/ReviewSection";
+import FAQ from "../../sections/FAQ/FAQ";
 
 interface Room {
   id: number;
@@ -76,8 +79,11 @@ export default function HotelsPage() {
         <SearchBar />
       </div>
 
+      {/* Tribtel Hotels Brand Section */}
+      <BrandSection amenities/>
+
       <section className={styles.hotels}>
-        <h2>Our Hotels</h2>
+        <h2>Stay in our lovely places</h2>
         <div className={styles.grid}>
           {hotels.map((hotel) => (
             <div key={hotel.id} className={styles.hotelCard}>
@@ -133,6 +139,9 @@ export default function HotelsPage() {
         onClose={() => setOpenGallery(false)}
         images={hotelImages[activeHotelId ?? 1]} // later: swap per hotel using activeHotelId
       />
+
+      <ReviewSection/>
+      <FAQ/>
 
     </MainLayout>
   );

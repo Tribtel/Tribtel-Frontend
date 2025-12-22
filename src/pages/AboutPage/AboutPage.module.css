@@ -15,6 +15,7 @@
 }
 
 .storySection h2 {
+  font-family: "Michroma", sans-serif;
   color: #FDC959;
 }
 
@@ -31,6 +32,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.valuesSection h2{
+    font-family: "Michroma", sans-serif;
 }
 
 /* VALUES SLIDESHOW */
@@ -83,9 +88,11 @@
 /* TEAM SECTION */
 .teamSection {
   padding: 2rem;
+  background-color: #fffdf8;
 }
 
 .teamSection h2 {
+  font-family: "Michroma", sans-serif;
   text-align: center;
   margin-bottom: 1.5rem;
 }

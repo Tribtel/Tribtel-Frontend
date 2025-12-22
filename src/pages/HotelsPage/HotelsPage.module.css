@@ -1,11 +1,12 @@
 .hotels {
-  padding: 8rem 3rem 2rem;
-  background: #fff5e1;
+  margin-top: 1rem;
+  padding: 4rem 3rem 2rem;
+  background: #fffdf8;
 }
 
 .searchWrapper {
-  position: absolute;
-  top: 70%; /* relative to hero */
+  position: relative;
+  top: 100%; /* relative to hero*/
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -38,6 +39,7 @@
 
 .heroSection {
   position: relative;
+  padding-bottom: 8rem  ;
   height: 400px; /* hero height */
 }
 

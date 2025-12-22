@@ -9,9 +9,20 @@ import Holiday1 from "../../assets/images/Holiday/Holiday_1.svg";
 import Holiday2 from "../../assets/images/Holiday/Holiday_2.svg";
 import Holiday3 from "../../assets/images/Holiday/Holiday_3.svg";
 
+import HeroSection from "../../sections/HeroSection/HeroSection";
+import dealsHeroImage from "../../assets/images/Holiday/Holiday_5.svg";
+import ReviewSection from "../../sections/ReviewSection/ReviewSection";
+
 export default function DealsPage() {
     return (
-        <MainLayout hero={<h1 className={styles.heroTitle}>Exclusive Deals & Offers</h1>}>
+        <MainLayout hero={
+          <HeroSection
+            imageUrl={dealsHeroImage}
+            title="Book Easy, Travel More"
+            subtitle="Save big on your next adventure with our latest promotions, with our exclusive deals and discounts."
+            showCTA={false}
+          /> 
+        }>
             <section className={styles.dealsSection}>
                 {/* Add your deals content in here */}
                 <h2>Featured Deals</h2>
@@ -56,6 +67,7 @@ export default function DealsPage() {
                     <Button type="submit" variant="secondary">Subscribe</Button>
                 </form>
             </section>
+            <ReviewSection />
         </MainLayout>
     );
 }

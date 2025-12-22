@@ -7,6 +7,7 @@ import OffersSection from "../../sections/OffersSection/OffersSection";
 import Reviews from "../../sections/ReviewSection/ReviewSection";
 import styles from "./LandingPage.module.css";
 import HeroSection from "../../sections/HeroSection/HeroSection";
+import BrandSection from "../../sections/Brand/BrandSection";
 
 export default function LandingPage() {
   return (
@@ -17,6 +18,10 @@ export default function LandingPage() {
         </div>
         {/* Showcase Section */}
         <Showcase />
+
+        {/* Tribtel Hotels Brand Section */}
+        <BrandSection  showcase/>
+
         {/* Additional sections can be added here */}
         <Membership />
         <OffersSection />

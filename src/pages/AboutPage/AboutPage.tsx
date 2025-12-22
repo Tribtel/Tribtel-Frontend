@@ -15,7 +15,9 @@ import {
 } from "@heroicons/react/24/outline";
 
 import HeroSection from "../../sections/HeroSection/HeroSection";
+import BrandSection from "../../sections/Brand/BrandSection";
 import aboutHeroImage from "../../assets/images/Features/Features_3.svg";
+import FAQ from "../../sections/FAQ/FAQ";   
 import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
@@ -60,6 +62,7 @@ export default function AboutPage() {
         showCTA={false}
     /> 
     }>
+      <BrandSection />
       {/* Story + Values Split Section */}
       <section className={`${styles.splitSection} mb40`}>
         {/* Story Section - left side */}
@@ -109,6 +112,7 @@ export default function AboutPage() {
           </CardV>
         </div>
       </section>
+      <FAQ/>
     </MainLayout>
   );
 }
