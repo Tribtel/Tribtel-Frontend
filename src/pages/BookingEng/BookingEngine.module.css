@@ -1,0 +1,63 @@
+.heroTitle {
+  font-family: "Michroma", sans-serif;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.summarySection {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.dateInputs {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.dateField {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.guestSelector {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.guestSelector label {
+  margin-right: 0.5rem;
+}
+
+.roomsBreakdown {
+  margin: 1.5rem 0;
+}
+
+.roomRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.costs {
+  margin: 1.5rem 0;
+}
+
+.costs div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.totalRow {
+  border-top: 2px solid var(--color-accent);
+  padding-top: 0.5rem;
+}

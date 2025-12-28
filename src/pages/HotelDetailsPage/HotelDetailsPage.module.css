@@ -21,6 +21,12 @@
   max-width: 900px;
 }
 
+.breadCrumb{
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
 .info {
   margin-bottom: 2rem;
 }

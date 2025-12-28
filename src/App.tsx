@@ -7,6 +7,7 @@ import DealsPage from "./pages/DealsPage/DealsPage";
 import VacationsPage from "./pages/VacationsPage/VacationsPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import DesignSystemPage from "./pages/DesignSystemPage/DesignSystemPage";
+import BookingEngine from "./pages/BookingEng/BookingEngine";
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
         <Route path="/deals" element={<DealsPage />} />
         <Route path="/vacations" element={<VacationsPage />} />
         <Route path="/about" element={<AboutPage />} />
+
+        {/* Booking Engine unified routes */}
+        <Route path="/fulfilment/deal/:dealId" element={<BookingEngine />} />
+        <Route path="/fulfilment/package/:packageId" element={<BookingEngine />} />
+        <Route path="/fulfilment/hotel/:hotelId" element={<BookingEngine />} />
       </Routes>
     </BrowserRouter>
   );

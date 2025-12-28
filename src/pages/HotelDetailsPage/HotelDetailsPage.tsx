@@ -7,6 +7,7 @@ import SearchBar from "../../components/Searchbar/Searchbar";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import RoomModal from "../../components/RoomModal/RoomModal";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import MainLayout from "../../layout/MainLayout";
 
 //Imported images
@@ -78,6 +79,11 @@ export default function HotelDetailPage() {
       <SearchBar />
      </div>
     <section className={styles.detail}>
+
+      <div className={styles.breadCrumb}>
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Hotels", href: "/Hotels"}, {label: "Details"}]} />
+      </div>
+
       <img src={hotel.image} alt={hotel.name} className={styles.hero} />
       <div className={styles.backBtnWrapper}>
         <Link to="/hotels" className={styles.backBtn}>

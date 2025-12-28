@@ -9,6 +9,7 @@ import GalleryModal from "../../components/GalleryModal/GalleryModal";
 import styles from "./HotelsPage.module.css";
 import BrandSection from "../../sections/Brand/BrandSection";
 import ReviewSection from "../../sections/ReviewSection/ReviewSection";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import FAQ from "../../sections/FAQ/FAQ";
 
 interface Room {
@@ -74,9 +75,14 @@ export default function HotelsPage() {
 
   return (
     <MainLayout hero={<HotelsHero />}>
+       
       {/* Floating SearchBar */}
       <div className={styles.searchWrapper}>
         <SearchBar />
+      </div>
+
+      <div className={styles.breadCrumb}>
+        <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Hotels" }]} />
       </div>
 
       {/* Tribtel Hotels Brand Section */}

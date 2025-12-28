@@ -14,6 +14,12 @@
   max-width: 900px;
 }
 
+.breadCrumb {
+  position: relative;
+  text-align: center;
+  color: #5f5261;
+}
+
 .hotels h2 {
   font-family: "Michroma", sans-serif;
   font-size: 2rem;

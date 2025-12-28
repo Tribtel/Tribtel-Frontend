@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MainLayout from "../../layout/MainLayout";
 import CardV from "../../components/Card-Vertical/Card-Vertical";
 import Button from "../../components/Button/Button";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 import Team1 from "../../assets/icons/profile.svg";
 import Team2 from "../../assets/icons/profile.svg";
@@ -62,6 +63,10 @@ export default function AboutPage() {
         showCTA={false}
     /> 
     }>
+      <div className={styles.breadCrumb}>
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About" }]} />
+      </div>
+
       <BrandSection />
       {/* Story + Values Split Section */}
       <section className={`${styles.splitSection} mb40`}>

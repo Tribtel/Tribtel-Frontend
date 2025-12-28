@@ -7,15 +7,22 @@ import OffersSection from "../../sections/OffersSection/OffersSection";
 import Reviews from "../../sections/ReviewSection/ReviewSection";
 import styles from "./LandingPage.module.css";
 import HeroSection from "../../sections/HeroSection/HeroSection";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import BrandSection from "../../sections/Brand/BrandSection";
 
 export default function LandingPage() {
   return (
     <MainLayout hero={<HeroSection/>}>
+      
         {/* Floating SearchBar */}
         <div className={styles.searchWrapper}>
           <SearchBar />
         </div>
+
+        <div className= {styles.breadCrumb}>
+          <Breadcrumb items={[{ label: "Home"}]} />
+        </div>
+
         {/* Showcase Section */}
         <Showcase />
 

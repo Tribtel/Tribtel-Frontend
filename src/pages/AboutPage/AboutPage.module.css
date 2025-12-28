@@ -5,6 +5,13 @@
   min-height: 400px;
 }
 
+.breadCrumb {
+  position: relative;
+  text-align: center;
+  color: #5f5261;
+  margin-top: 2rem;
+}
+
 .storySection {
   background-color: #470F51; 
   color: #fff;

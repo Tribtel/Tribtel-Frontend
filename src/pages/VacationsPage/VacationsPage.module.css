@@ -14,6 +14,13 @@
   margin-bottom: 40px;
 }
 
+.breadCrumb {
+  position: relative;
+  text-align: center;
+  color: #5f5261;
+  margin-bottom: 2rem;
+}
+
 .packagesSection h2 {
   font-family: "Michroma", sans-serif;
   text-align: center;

@@ -13,6 +13,7 @@ import Vacation3 from "../../assets/images/Holiday/Holiday_6.svg";
 import HeroSection from "../../sections/HeroSection/HeroSection";
 import vacationsHeroImage from "../../assets/images/Holiday/Holiday_6.svg";
 import ReviewSection from "../../sections/ReviewSection/ReviewSection";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 
 export default function VacationsPage() {
@@ -27,6 +28,11 @@ export default function VacationsPage() {
           /> 
         }>
       <section className={styles.packagesSection}>
+        
+        <div className={styles.breadCrumb}>
+                <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Vacation Packages" }]} />
+        </div>
+
         <h2>Popular Packages</h2>
         <div className={styles.packagesList}>
           {/* Example vacation package */}

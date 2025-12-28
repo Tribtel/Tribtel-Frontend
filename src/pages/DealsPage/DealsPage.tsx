@@ -12,6 +12,7 @@ import Holiday3 from "../../assets/images/Holiday/Holiday_3.svg";
 import HeroSection from "../../sections/HeroSection/HeroSection";
 import dealsHeroImage from "../../assets/images/Holiday/Holiday_5.svg";
 import ReviewSection from "../../sections/ReviewSection/ReviewSection";
+import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 
 export default function DealsPage() {
     return (
@@ -24,6 +25,10 @@ export default function DealsPage() {
           /> 
         }>
             <section className={styles.dealsSection}>
+                
+                <div className={styles.breadCrumb}>
+                    <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Deals" }]} />
+                </div>
                 {/* Add your deals content in here */}
                 <h2>Featured Deals</h2>
                 {/*Deal card grid*/}
