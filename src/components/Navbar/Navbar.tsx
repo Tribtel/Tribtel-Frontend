@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../auth/Auth';
 
 interface NavbarProps {
-  onSignInClick: () => void;
+  onSignInClick?: () => void;
 }
 
 export default function Navbar({ onSignInClick }: NavbarProps) {
@@ -58,7 +58,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                onSignInClick();
+                onSignInClick?.();
               }}
             >
               Sign in
@@ -74,7 +74,7 @@ export default function Navbar({ onSignInClick }: NavbarProps) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              onSignInClick();
+              onSignInClick?.();
             }}
           >
             Join

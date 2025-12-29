@@ -1,5 +1,4 @@
 // src/sections/LocationsSection.tsx
-import React from 'react';
 import Button from '../../components/Button/Button'; // adjust path if needed
 import styles from './LocationSection.module.css';
 

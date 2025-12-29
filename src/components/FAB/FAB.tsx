@@ -6,7 +6,7 @@ interface FABProps {
   icon?: React.ReactNode;
 }
 
-const FAB = ({ onClick, icon }: FABProps) => {
+const FAB = ({ onClick }: FABProps) => {
   return (
     <button className={styles.fab} onClick={onClick}>
       <div className={styles.iconWrapper}>
