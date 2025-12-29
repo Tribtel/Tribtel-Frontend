@@ -4,11 +4,11 @@
   text-align: center;
 }
 
-.brandSection h2 { 
-    font-family: "Michroma", sans-serif;
-    color: var(--color-primary);
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.brandSection h2 {
+  font-family: 'Michroma', sans-serif;
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Intro paragraph centered */
@@ -34,7 +34,9 @@
   padding: 1.5rem;
   border-radius: 2px;
   text-align: left;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .featureCard h3,

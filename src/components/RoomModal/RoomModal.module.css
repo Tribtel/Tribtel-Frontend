@@ -9,9 +9,9 @@
 }
 
 h3 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 1.5rem;
-  color: #470F51;
+  color: #470f51;
   margin-bottom: 1rem;
 }
 
@@ -30,7 +30,7 @@ h3 {
   max-height: 300px;
   object-fit: cover;
   border-radius: 2px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .navBtn {
@@ -40,22 +40,28 @@ h3 {
   width: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   background: none;
   border: none;
   font-size: 2rem;
-  color: #470F51;
+  color: #470f51;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .navBtn:hover {
   color: #fdc959;
 }
 
-/* Place left/right buttons */ 
-.navBtn:first-of-type { left: 0; } 
-.navBtn:last-of-type { right: 0; }
+/* Place left/right buttons */
+.navBtn:first-of-type {
+  left: 0;
+}
+.navBtn:last-of-type {
+  right: 0;
+}
 
 .modalFooter {
   display: flex;
@@ -69,5 +75,5 @@ h3 {
 .price {
   font-weight: medium;
   font-size: 1.2rem;
-  color: #470F51;
+  color: #470f51;
 }

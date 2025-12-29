@@ -1,41 +1,41 @@
 //User sign-up and sign-in modal component
 import React, { useState } from 'react';
-import { useAuth } from "../../auth/Auth";   //import global auth state
+import { useAuth } from '../../auth/Auth'; //import global auth state
 import './AuthModal.css';
 
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
   defaultSignUp?: boolean;
-};
+}
 
 interface FormData {
   username?: string;
   email: string;
   password: string;
-};
+}
 
 // AuthModal component definition
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultSignUp }) => {
-  const { signIn, signUp } = useAuth();// Access login function from global auth state
+  const { signIn, signUp } = useAuth(); // Access login function from global auth state
 
- // State to toggle between sign-in and sign-up forms (Array ([isSignUp, setIsSignUp]))
- const [isSignUp, setIsSignUp] = useState(defaultSignUp || false);
+  // State to toggle between sign-in and sign-up forms (Array ([isSignUp, setIsSignUp]))
+  const [isSignUp, setIsSignUp] = useState(defaultSignUp || false);
 
- // State to hold form data (Array ([formData, setFormData]))
- const [formData, setFormData] = useState<FormData>({ username: '', email: '', password: '' });
+  // State to hold form data (Array ([formData, setFormData]))
+  const [formData, setFormData] = useState<FormData>({ username: '', email: '', password: '' });
 
- // State for feedback (success/error messages)
+  // State for feedback (success/error messages)
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
- // Function to handle input changes 
- const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Function to handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-   // Function to handle form submission for sign-in and sign-up
-   const handleSubmit = async (e: React.FormEvent) => {
+  // Function to handle form submission for sign-in and sign-up
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSuccess(null);
@@ -44,21 +44,20 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultSignUp })
     try {
       if (isSignUp) {
         await signUp(formData.username!, formData.email, formData.password);
-        setSuccess("Sign-up successful!");
+        setSuccess('Sign-up successful!');
       } else {
         await signIn(formData.email, formData.password);
-        setSuccess("Sign-in successful!");
+        setSuccess('Sign-in successful!');
       }
       setTimeout(onClose, 1500); // Close modal after success
     } catch (err: any) {
-      setError(err.message || "Authentication failed");
-    };
-
+      setError(err.message || 'Authentication failed');
+    }
   }; // close handleSubmit
 
   // Function to handle Google OAuth authentication
   const handleGoogleAuth = () => {
-    window.location.href = "http://localhost:4000/api/auth/google";
+    window.location.href = 'http://localhost:4000/api/auth/google';
   };
 
   if (!isOpen) return null;
@@ -74,21 +73,15 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultSignUp })
 
         {/* Tabs */}
         <div className="tabs">
-          <button
-            className={isSignUp ? "active" : ""}
-            onClick={() => setIsSignUp(true)}
-          >
+          <button className={isSignUp ? 'active' : ''} onClick={() => setIsSignUp(true)}>
             Sign Up
           </button>
-          <button
-            className={!isSignUp ? "active" : ""}
-            onClick={() => setIsSignUp(false)}
-          >
+          <button className={!isSignUp ? 'active' : ''} onClick={() => setIsSignUp(false)}>
             Sign In
           </button>
         </div>
 
-         {/* Feedback messages */}
+        {/* Feedback messages */}
         {error && <div className="error-msg">{error}</div>}
         {success && <div className="success-msg">{success}</div>}
 
@@ -120,7 +113,9 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultSignUp })
             onChange={handleChange}
             required
           />
-          <button type="submit" className="submit-btn">{isSignUp ? "Sign Up" : "Sign In"}</button>
+          <button type="submit" className="submit-btn">
+            {isSignUp ? 'Sign Up' : 'Sign In'}
+          </button>
         </form>
 
         <hr />

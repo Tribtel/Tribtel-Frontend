@@ -21,7 +21,7 @@
   max-width: 900px;
 }
 
-.breadCrumb{
+.breadCrumb {
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
@@ -32,9 +32,9 @@
 }
 
 .info h2 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 2rem;
-  color: #470F51;
+  color: #470f51;
   margin-bottom: 0.5rem;
 }
 
@@ -54,7 +54,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #470F51;
+  border: 2px solid #470f51;
   background: transparent;
   cursor: pointer;
   overflow: hidden;
@@ -63,7 +63,7 @@
 }
 
 .chevron {
-  color: #470F51;
+  color: #470f51;
   line-height: 1;
   pointer-events: none;
   display: inline-block;
@@ -72,7 +72,7 @@
 .chevron .icon {
   width: 24px;
   height: 24px;
-  color: #470F51;
+  color: #470f51;
 }
 
 .caption {
@@ -80,14 +80,16 @@
   white-space: nowrap;
   opacity: 0;
   transform: translateX(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .backBtn:hover {
   width: auto;
   padding: 0 1rem;
   border-radius: 25px; /* pill shape */
-  background: #470F51;
+  background: #470f51;
   color: #fdc959;
   text-decoration: none;
 }
@@ -103,7 +105,7 @@
 .roomsHeading {
   font-size: 1.5rem;
   margin: 2rem 0 1rem;
-  color: #470F51;
+  color: #470f51;
 }
 
 .roomsGrid {
@@ -114,12 +116,14 @@
 
 .roomCard {
   position: relative;
-  background: #470F51;
+  background: #470f51;
   color: #fff;
   border-radius: 2px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .roomCard img {
@@ -151,11 +155,13 @@
 
 .viewMoreBtn {
   background: rgba(253, 201, 89, 0.85); /* semi-transparent gold */
-  color: #470F51;
+  color: #470f51;
   border: none;
   font-weight: bold;
   padding: 0.6rem 1.2rem;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
 }
 
 .viewMoreBtn:hover {
@@ -190,25 +196,27 @@
   color: #fdc959;
   border: 2px solid #fdc959;
   font-weight: bold;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .bookBtn:hover {
   background: #fdc959;
-  color: #470F51;
+  color: #470f51;
   transform: translateY(-2px);
 }
 
 .roomCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Modal styles */
 .modalBackdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -250,7 +258,7 @@
 
 .price {
   font-weight: bold;
-  color: #470F51;
+  color: #470f51;
 }
 
 @media (max-width: 600px) {

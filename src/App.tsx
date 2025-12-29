@@ -1,13 +1,13 @@
 /*Rendering for the full forntend*/
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import HotelsPage from "./pages/HotelsPage/HotelsPage";
-import HotelDetailsPage from "./pages/HotelDetailsPage/HotelDetailsPage";
-import DealsPage from "./pages/DealsPage/DealsPage";
-import VacationsPage from "./pages/VacationsPage/VacationsPage";
-import AboutPage from "./pages/AboutPage/AboutPage";
-import DesignSystemPage from "./pages/DesignSystemPage/DesignSystemPage";
-import BookingEngine from "./pages/BookingEng/BookingEngine";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage/LandingPage';
+import HotelsPage from './pages/HotelsPage/HotelsPage';
+import HotelDetailsPage from './pages/HotelDetailsPage/HotelDetailsPage';
+import DealsPage from './pages/DealsPage/DealsPage';
+import VacationsPage from './pages/VacationsPage/VacationsPage';
+import AboutPage from './pages/AboutPage/AboutPage';
+import DesignSystemPage from './pages/DesignSystemPage/DesignSystemPage';
+import BookingEngine from './pages/BookingEng/BookingEngine';
 
 function App() {
   return (

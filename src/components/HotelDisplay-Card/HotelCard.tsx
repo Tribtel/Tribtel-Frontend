@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./HotelCard.module.css";
+import React from 'react';
+import styles from './HotelCard.module.css';
 
 interface HotelDisplayProps {
   title: string;
@@ -37,12 +37,9 @@ export default function HotelDisplay({
               <>
                 <span className={styles.divider}></span>
                 <span className={styles.rating}>
-                  {"★".repeat(Math.floor(rating))}
-                  {"☆".repeat(5 - Math.floor(rating))}
-                  <span className={styles.ratingValue}>
-                    {" "}
-                    {rating.toFixed(1)}/5
-                  </span>
+                  {'★'.repeat(Math.floor(rating))}
+                  {'☆'.repeat(5 - Math.floor(rating))}
+                  <span className={styles.ratingValue}> {rating.toFixed(1)}/5</span>
                 </span>
               </>
             )}
@@ -56,9 +53,7 @@ export default function HotelDisplay({
 
         {/* Price + CTA row */}
         <div className={styles.footerRow}>
-          {price && (
-            <p className={styles.price}>Starting at - {price} / night</p>
-          )}
+          {price && <p className={styles.price}>Starting at - {price} / night</p>}
           <div className={styles.actions}>{children}</div>
         </div>
       </div>

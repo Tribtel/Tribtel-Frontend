@@ -3,16 +3,16 @@
 // Parts of information can be excluded depending on the usage and purpose.
 // This card has 2 orientation types: Card-Vertical and Card-Horizontal.
 
-import React from "react";
-import styles from "./Card-Horizontal.module.css";
+import React from 'react';
+import styles from './Card-Horizontal.module.css';
 
 interface CardHProps {
-  title: string;          // Main heading for the card
-  description: string;    // Supporting text
-  imageUrl?: string;      // Optional image on the left
-  price?: string;         // Price per night
-  rating?: number;        // Rating out of 5
-  location?: string;      // City or area
+  title: string; // Main heading for the card
+  description: string; // Supporting text
+  imageUrl?: string; // Optional image on the left
+  price?: string; // Price per night
+  rating?: number; // Rating out of 5
+  location?: string; // City or area
   children?: React.ReactNode; // CTA button(s)
 }
 
@@ -38,8 +38,8 @@ export default function CardH({
 
           {rating !== undefined && (
             <div className={styles.rating}>
-              {"★".repeat(Math.floor(rating))}
-              {"☆".repeat(5 - Math.floor(rating))}
+              {'★'.repeat(Math.floor(rating))}
+              {'☆'.repeat(5 - Math.floor(rating))}
               <span className={styles.ratingValue}> {rating.toFixed(1)}/5</span>
             </div>
           )}

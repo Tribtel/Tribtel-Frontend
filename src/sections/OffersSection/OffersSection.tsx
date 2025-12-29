@@ -1,6 +1,6 @@
 // src/sections/Offers/Offers.tsx
-import { Link } from "react-router-dom";
-import styles from "./OffersSection.module.css";
+import { Link } from 'react-router-dom';
+import styles from './OffersSection.module.css';
 
 interface Offer {
   id: number;
@@ -13,25 +13,25 @@ interface Offer {
 const offers: Offer[] = [
   {
     id: 1,
-    title: "Summer Escape",
-    description: "Enjoy 20% off ocean view rooms this summer.",
-    image: "src/assets/images/Features/Features_2.svg",
-    discount: "20% OFF"
+    title: 'Summer Escape',
+    description: 'Enjoy 20% off ocean view rooms this summer.',
+    image: 'src/assets/images/Features/Features_2.svg',
+    discount: '20% OFF',
   },
   {
     id: 2,
-    title: "Luxury Weekend",
-    description: "Book a luxury suite for 2 nights and get the 3rd free.",
-    image: "src/assets/images/Features/Features_6.svg",
-    discount: "Stay 3, Pay 2"
+    title: 'Luxury Weekend',
+    description: 'Book a luxury suite for 2 nights and get the 3rd free.',
+    image: 'src/assets/images/Features/Features_6.svg',
+    discount: 'Stay 3, Pay 2',
   },
   {
     id: 3,
-    title: "Family Package",
-    description: "Kids stay free in our garden villas.",
-    image: "src/assets/images/Features/Features_3.svg",
-    discount: "Kids Stay Free"
-  }
+    title: 'Family Package',
+    description: 'Kids stay free in our garden villas.',
+    image: 'src/assets/images/Features/Features_3.svg',
+    discount: 'Kids Stay Free',
+  },
 ];
 
 export default function OffersSection() {
@@ -60,7 +60,12 @@ export default function OffersSection() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                  <path
+                    d="M12 5L19 12L12 19"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
                 {/* Left Arrow - appears on hover */}
                 <span className={styles.leftArrow}></span>

@@ -5,59 +5,61 @@
   padding: 2rem;
 }
 
-.faq { 
-    background-color: var(--color-primary);
-    padding: 2rem; 
-} 
+.faq {
+  background-color: var(--color-primary);
+  padding: 2rem;
+}
 
 .faq h2 {
-    font-family: "Michroma", sans-serif;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-accent);
-    font-weight: 600;
+  font-family: 'Michroma', sans-serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .faqList {
-    max-width: 800px;
-    margin: 0 auto;
-} 
-    
-/* Each FAQ item */ 
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Each FAQ item */
 .faqItem {
-    border-bottom: 1px solid #e5e5e5;
-    padding: 0;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0;
 }
 .faqItem:last-child {
-    border-bottom: none;
-} 
+  border-bottom: none;
+}
 
 /* Question button */
 .faqQuestion {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--color-textALT);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 1rem;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-} 
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-textALT);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
 
-.faqQuestion:hover { 
-    background-color: rgba(29, 2, 35, 0.2);
-    color: var(--color-orange); 
-} 
+.faqQuestion:hover {
+  background-color: rgba(29, 2, 35, 0.2);
+  color: var(--color-orange);
+}
 
 .faqQuestion:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-orange);
-} 
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-orange);
+}
 
 /* Arrow icon */
 .arrowIcon {
@@ -77,18 +79,20 @@
 
 /* Answer section */
 .faqAnswer {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease; 
-    margin-top: 2rem; 
-    margin-bottom: 2rem;
-    color: var(--color-textALT); 
-    line-height: 1.6;
-    font-size: 1rem;
-} 
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-textALT);
+  line-height: 1.6;
+  font-size: 1rem;
+}
 
 .faqAnswer.open {
-    max-height: 1000px;  
-    opacity: 1; 
+  max-height: 1000px;
+  opacity: 1;
 }

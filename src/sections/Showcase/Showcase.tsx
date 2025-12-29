@@ -2,9 +2,9 @@
 // A section to showcase popular rooms or features
 //Intutive and builds credibility.
 
-import { Link } from "react-router-dom";
-import Button from "../../components/Button/Button";
-import styles from "./Showcase.module.css";
+import { Link } from 'react-router-dom';
+import Button from '../../components/Button/Button';
+import styles from './Showcase.module.css';
 
 interface Room {
   id: number;
@@ -15,9 +15,27 @@ interface Room {
 }
 
 const rooms: Room[] = [
-  { id: 1, name: "Luxury Suite", image: "src/assets/images/Rooms/Rooms_1.svg", rating: 4.8, price: "250/night" },
-  { id: 2, name: "Ocean View Room", image: "src/assets/images/Rooms/Rooms_2.svg", rating: 4.7, price: "180/night" },
-  { id: 3, name: "Garden Villa", image: "src/assets/images/Rooms/Rooms_3.svg", rating: 4.9, price: "300/night" },
+  {
+    id: 1,
+    name: 'Luxury Suite',
+    image: 'src/assets/images/Rooms/Rooms_1.svg',
+    rating: 4.8,
+    price: '250/night',
+  },
+  {
+    id: 2,
+    name: 'Ocean View Room',
+    image: 'src/assets/images/Rooms/Rooms_2.svg',
+    rating: 4.7,
+    price: '180/night',
+  },
+  {
+    id: 3,
+    name: 'Garden Villa',
+    image: 'src/assets/images/Rooms/Rooms_3.svg',
+    rating: 4.9,
+    price: '300/night',
+  },
 ];
 
 export default function Showcase() {
@@ -45,7 +63,12 @@ export default function Showcase() {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                  <path
+                    d="M12 5L19 12L12 19"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
                 </svg>
 
                 {/* Left Arrow - appears on hover */}

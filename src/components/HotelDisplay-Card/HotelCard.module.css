@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 .card {
   display: flex;
   width: 900px; /* match Figma width */
@@ -29,7 +29,7 @@
 
 /* Title sits alone */
 .title {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 36px;
   margin: 0 0 0.75rem 0;
   color: #470f51;

@@ -1,37 +1,36 @@
 .landingPage {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    padding: 2rem;
-  }
-  
-  /* Search bar wrapper to position it over the hero section */
-  .searchWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+}
+
+/* Search bar wrapper to position it over the hero section */
+.searchWrapper {
   position: absolute;
-  top: 95%;              /* halfway down hero */
+  top: 95%; /* halfway down hero */
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;           /* above hero */
-  width: 80%;            /* responsive width */
+  z-index: 10; /* above hero */
+  width: 80%; /* responsive width */
   max-width: 900px;
 }
 
-.breadCrumb{
+.breadCrumb {
   position: relative;
   text-align: center;
   color: #5f5261;
 }
-  @media (max-width: 1024px) {
-    .landingPage {
-      gap: 3rem;
-      padding: 1.5rem;
-    }
+@media (max-width: 1024px) {
+  .landingPage {
+    gap: 3rem;
+    padding: 1.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .landingPage {
-      gap: 2rem;
-      padding: 1rem;
-    }
+}
+
+@media (max-width: 768px) {
+  .landingPage {
+    gap: 2rem;
+    padding: 1rem;
   }
-  
+}

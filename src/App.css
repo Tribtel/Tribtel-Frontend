@@ -5,10 +5,10 @@
   text-align: center;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 h1 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
 }
 
 .logo {

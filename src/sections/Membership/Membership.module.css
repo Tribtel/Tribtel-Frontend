@@ -13,10 +13,10 @@
 }
 
 .left h3 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #470F51;
+  color: #470f51;
 }
 
 .left p {
@@ -46,7 +46,7 @@
   align-items: center;
 }
 .right li::before {
-  content: "✓";
-  color: #470F51;
+  content: '✓';
+  color: #470f51;
   margin-right: 0.5rem;
 }

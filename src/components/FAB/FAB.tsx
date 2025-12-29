@@ -1,6 +1,5 @@
-
 import styles from './FAB.module.css';
-import Telecon from '../../assets/icons/Telephone.svg'
+import Telecon from '../../assets/icons/Telephone.svg';
 
 interface FABProps {
   onClick?: () => void;

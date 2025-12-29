@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import styles from "./Sidebar.module.css";
+import { useState, useEffect } from 'react';
+import styles from './Sidebar.module.css';
 
 interface Link {
   href: string;
@@ -11,12 +11,12 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ links }: SidebarProps) {
-  const [active, setActive] = useState<string>("");
+  const [active, setActive] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100; // offset for navbar height
-      let currentSection = "";
+      let currentSection = '';
 
       links.forEach((link) => {
         const section = document.querySelector(link.href);
@@ -32,9 +32,9 @@ export default function Sidebar({ links }: SidebarProps) {
       setActive(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     handleScroll(); // run once on mount
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [links]);
 
   return (
@@ -44,10 +44,7 @@ export default function Sidebar({ links }: SidebarProps) {
         <ul>
           {links.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className={active === link.href ? styles.active : ""}
-              >
+              <a href={link.href} className={active === link.href ? styles.active : ''}>
                 {link.label}
               </a>
             </li>

@@ -1,6 +1,5 @@
 /*styles*/
 
-
 .heroSection {
   position: relative;
   padding-bottom: 12rem;
@@ -25,11 +24,7 @@
   inset: 0;
   filter: blur(1px);
   pointer-events: none;
-  background: linear-gradient(
-    to right,
-    rgba(35, 1, 40, 0.6) 30%,
-    rgba(71, 15, 81, 0) 100%
-  );
+  background: linear-gradient(to right, rgba(35, 1, 40, 0.6) 30%, rgba(71, 15, 81, 0) 100%);
 }
 
 .content {
@@ -41,7 +36,7 @@
 }
 
 .title {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 3rem;
   font-weight: 500;
   margin-bottom: 1rem;

@@ -8,18 +8,18 @@
 }
 
 .carousel img {
-  max-width: 80vw;   /* never wider than 80% of viewport */
-  max-height: 70vh;  /* never taller than 70% of viewport */
+  max-width: 80vw; /* never wider than 80% of viewport */
+  max-height: 70vh; /* never taller than 70% of viewport */
   object-fit: contain; /* keep aspect ratio */
   border-radius: 2px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .navBtn {
   background: none;
   border: none;
   font-size: 2rem;
-  color: #470F51;
+  color: #470f51;
   cursor: pointer;
   transition: transform 0.2s ease;
 }

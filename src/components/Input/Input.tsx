@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Input.module.css";
+import React from 'react';
+import styles from './Input.module.css';
 
 // Props for our Input component
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -14,10 +14,7 @@ export default function Input({ label, error, ...props }: InputProps) {
       {label && <label className={styles.label}>{label}</label>}
 
       {/* Input field itself */}
-      <input
-        className={`${styles.input} ${error ? styles.errorInput : ""}`}
-        {...props}
-      />
+      <input className={`${styles.input} ${error ? styles.errorInput : ''}`} {...props} />
 
       {/* Render error message if provided */}
       {error && <span className={styles.error}>{error}</span>}

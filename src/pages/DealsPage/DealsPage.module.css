@@ -1,6 +1,6 @@
 /* Hero Section */
 .heroTitle {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: clamp(2.5rem, 3vw + 1rem, 4rem);
   font-weight: 700;
   color: var(--color-primary);
@@ -23,7 +23,7 @@
 }
 
 .dealsSection h2 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   text-align: center;
   margin-bottom: 24px;
   color: var(--color-primary);
@@ -38,14 +38,14 @@
 
 /* Newsletter Section */
 .newsletterSection {
-  background: #F4942F;
+  background: #f4942f;
   padding: 40px 32px;
   text-align: center;
   margin-top: 40px;
 }
 
 .newsletterSection h2 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   margin-bottom: 16px;
   color: var(--color-primary);
 }

@@ -1,11 +1,11 @@
 .offers {
   padding: 6rem 3rem 2rem;
-  background: #470F51;
+  background: #470f51;
 }
 
 .offers h2 {
   text-align: left;
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #fdc959;
@@ -28,13 +28,15 @@
 .card {
   position: relative;
   display: block;
-  background: #470F51;
+  background: #470f51;
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 600px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .card img {
@@ -89,7 +91,9 @@
 }
 
 .rightArrow {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .leftArrow {
@@ -104,14 +108,16 @@
 
 .leftArrow::before,
 .leftArrow::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   width: 0;
   height: 2px;
   background-color: #fff;
   transform: rotate(0deg);
-  transition: transform 0.4s ease 0.2s, width 0.4s ease 0.2s;
+  transition:
+    transform 0.4s ease 0.2s,
+    width 0.4s ease 0.2s;
 }
 
 .leftArrow::before {
@@ -126,7 +132,7 @@
 
 /* Hover Effects */
 .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   transform: translateY(-8px);
 }
 

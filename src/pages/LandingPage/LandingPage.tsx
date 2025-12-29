@@ -1,38 +1,37 @@
 // src/pages/LandingPage.tsx
-import MainLayout from "../../layout/MainLayout";
-import SearchBar from "../../components/Searchbar/Searchbar";
-import Showcase from "../../sections/Showcase/Showcase";
-import Membership from "../../sections/Membership/Membership";
-import OffersSection from "../../sections/OffersSection/OffersSection";
-import Reviews from "../../sections/ReviewSection/ReviewSection";
-import styles from "./LandingPage.module.css";
-import HeroSection from "../../sections/HeroSection/HeroSection";
-import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
-import BrandSection from "../../sections/Brand/BrandSection";
+import MainLayout from '../../layout/MainLayout';
+import SearchBar from '../../components/Searchbar/Searchbar';
+import Showcase from '../../sections/Showcase/Showcase';
+import Membership from '../../sections/Membership/Membership';
+import OffersSection from '../../sections/OffersSection/OffersSection';
+import Reviews from '../../sections/ReviewSection/ReviewSection';
+import styles from './LandingPage.module.css';
+import HeroSection from '../../sections/HeroSection/HeroSection';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import BrandSection from '../../sections/Brand/BrandSection';
 
 export default function LandingPage() {
   return (
-    <MainLayout hero={<HeroSection/>}>
-      
-        {/* Floating SearchBar */}
-        <div className={styles.searchWrapper}>
-          <SearchBar />
-        </div>
+    <MainLayout hero={<HeroSection />}>
+      {/* Floating SearchBar */}
+      <div className={styles.searchWrapper}>
+        <SearchBar />
+      </div>
 
-        <div className= {styles.breadCrumb}>
-          <Breadcrumb items={[{ label: "Home"}]} />
-        </div>
+      <div className={styles.breadCrumb}>
+        <Breadcrumb items={[{ label: 'Home' }]} />
+      </div>
 
-        {/* Showcase Section */}
-        <Showcase />
+      {/* Showcase Section */}
+      <Showcase />
 
-        {/* Tribtel Hotels Brand Section */}
-        <BrandSection  showcase/>
+      {/* Tribtel Hotels Brand Section */}
+      <BrandSection showcase />
 
-        {/* Additional sections can be added here */}
-        <Membership />
-        <OffersSection />
-        <Reviews />
+      {/* Additional sections can be added here */}
+      <Membership />
+      <OffersSection />
+      <Reviews />
     </MainLayout>
   );
 }

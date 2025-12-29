@@ -1,9 +1,9 @@
 //Gallery carousel modal component/container
 
 // src/components/GalleryModal/GalleryModal.tsx
-import { useState } from "react";
-import Modal from "../Modal/Modal";
-import styles from "./GalleryModal.module.css";
+import { useState } from 'react';
+import Modal from '../Modal/Modal';
+import styles from './GalleryModal.module.css';
 
 interface GalleryModalProps {
   isOpen: boolean;
@@ -20,9 +20,13 @@ export default function GalleryModal({ isOpen, onClose, images }: GalleryModalPr
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className={styles.carousel}>
-        <button onClick={prev} className={styles.navBtn}>‹</button>
+        <button onClick={prev} className={styles.navBtn}>
+          ‹
+        </button>
         <img src={images[index]} alt={`Gallery ${index}`} />
-        <button onClick={next} className={styles.navBtn}>›</button>
+        <button onClick={next} className={styles.navBtn}>
+          ›
+        </button>
       </div>
     </Modal>
   );

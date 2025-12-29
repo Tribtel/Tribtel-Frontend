@@ -1,7 +1,7 @@
 // src/sections/Footer.tsx
 
-import { Link } from "react-router-dom"; // use Router links
-import styles from "./Footer.module.css";
+import { Link } from 'react-router-dom'; // use Router links
+import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
@@ -19,9 +19,7 @@ export default function Footer() {
           </Link>
           {/*sitemap link*/}
         </nav>
-        <p className={styles.copy}>
-          © {new Date().getFullYear()} Tribtel. All rights reserved.
-        </p>
+        <p className={styles.copy}>© {new Date().getFullYear()} Tribtel. All rights reserved.</p>
       </div>
     </footer>
   );

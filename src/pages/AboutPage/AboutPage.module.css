@@ -13,7 +13,7 @@
 }
 
 .storySection {
-  background-color: #470F51; 
+  background-color: #470f51;
   color: #fff;
   padding: 2rem;
   display: flex;
@@ -22,8 +22,8 @@
 }
 
 .storySection h2 {
-  font-family: "Michroma", sans-serif;
-  color: #FDC959;
+  font-family: 'Michroma', sans-serif;
+  color: #fdc959;
 }
 
 .storySection p {
@@ -33,7 +33,7 @@
 }
 
 .valuesSection {
-  background-color: #FDC959; 
+  background-color: #fdc959;
   color: #111;
   padding: 2rem;
   display: flex;
@@ -41,8 +41,8 @@
   justify-content: center;
 }
 
-.valuesSection h2{
-    font-family: "Michroma", sans-serif;
+.valuesSection h2 {
+  font-family: 'Michroma', sans-serif;
 }
 
 /* VALUES SLIDESHOW */
@@ -56,12 +56,14 @@
 }
 
 .valueCard {
-  background: #FDC959;
+  background: #fdc959;
   text-align: left;
   padding: 1.5rem;
   width: 80%;
   max-width: 320px;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -79,7 +81,7 @@
   width: 40px;
   height: 40px;
   margin-bottom: 1rem;
-  color: #470F51;
+  color: #470f51;
 }
 
 .valueCard h3 {
@@ -99,7 +101,7 @@
 }
 
 .teamSection h2 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   text-align: center;
   margin-bottom: 1.5rem;
 }

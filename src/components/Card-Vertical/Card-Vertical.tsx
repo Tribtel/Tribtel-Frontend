@@ -1,10 +1,10 @@
-//This is a general information display card that carries short contextual information 
+//This is a general information display card that carries short contextual information
 //and one cta to reveal more information.
 //Parts of information can be excluded dependint on the usage and purpose.
 //This card has 2 orientation types : Card-Vertiacl and Card-Horizontal.
 
-import React from "react";
-import styles from "./Card-Vertical.module.css";
+import React from 'react';
+import styles from './Card-Vertical.module.css';
 
 interface CardVProps {
   title: string; // Main heading for the card
@@ -38,8 +38,8 @@ export default function CardV({
         {/* Rating stars */}
         {rating !== undefined && (
           <div className={styles.rating}>
-            {"★".repeat(Math.floor(rating))}
-            {"☆".repeat(5 - Math.floor(rating))}
+            {'★'.repeat(Math.floor(rating))}
+            {'☆'.repeat(5 - Math.floor(rating))}
             <span className={styles.ratingValue}> {rating.toFixed(1)}/5</span>
           </div>
         )}

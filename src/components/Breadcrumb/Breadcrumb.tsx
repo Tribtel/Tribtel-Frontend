@@ -2,8 +2,8 @@
 // and provide quick access back to parent pages.
 
 // Import Link from react-router-dom for navigation
-import { Link } from "react-router-dom";
-import styles from "./Breadcrumb.module.css";
+import { Link } from 'react-router-dom';
+import styles from './Breadcrumb.module.css';
 
 // Props interface: each breadcrumb item has a label and optional href
 interface BreadcrumbProps {

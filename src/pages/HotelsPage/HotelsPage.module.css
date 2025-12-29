@@ -21,10 +21,10 @@
 }
 
 .hotels h2 {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Michroma', sans-serif;
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #470F51;
+  color: #470f51;
   text-align: center;
 }
 
@@ -36,7 +36,7 @@
 
 .hotelCard {
   position: relative;
-  background: #470F51;
+  background: #470f51;
   color: #fff;
   border-radius: 2px;
   overflow: hidden;
@@ -45,7 +45,7 @@
 
 .heroSection {
   position: relative;
-  padding-bottom: 8rem  ;
+  padding-bottom: 8rem;
   height: 400px; /* hero height */
 }
 
@@ -71,7 +71,7 @@
   justify-content: space-between;
   align-items: center; /* vertically center */
   padding: 0;
-  background: rgba(0,0,0,0.4); /* subtle tint for readability */
+  background: rgba(0, 0, 0, 0.4); /* subtle tint for readability */
 }
 
 .overlayLeft {
@@ -95,18 +95,18 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
   align-items: flex-end;
   text-align: right;
 
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0) 0%,       /* fully transparent at left edge */
-    rgba(0, 0, 0, 0.4) 40%,    /* starts fading in */
-    rgba(0, 0, 0, 0.7) 100%    /* strong dark tint at right edge */
+    rgba(0, 0, 0, 0) 0%,
+    /* fully transparent at left edge */ rgba(0, 0, 0, 0.4) 40%,
+    /* starts fading in */ rgba(0, 0, 0, 0.7) 100% /* strong dark tint at right edge */
   );
 
-  backdrop-filter: blur(2px);  /* subtle blur for glassy feel */
+  backdrop-filter: blur(2px); /* subtle blur for glassy feel */
   height: 400px;
   padding: 2rem;
 }
@@ -124,14 +124,14 @@
 }
 
 .goldSecondary {
-  background: transparent;       /* no fill */
-  border: 2px solid #fdc959;     /* gold outline */
-  color: #fdc959;                /* gold text */
+  background: transparent; /* no fill */
+  border: 2px solid #fdc959; /* gold outline */
+  color: #fdc959; /* gold text */
 }
 
 .goldSecondary:hover {
-  background: #fdc959;           /* gold fill on hover */
-  color: #470F51;                /* purple text for contrast */
+  background: #fdc959; /* gold fill on hover */
+  color: #470f51; /* purple text for contrast */
 }
 
 /* Rooms grid inside hotel card */
@@ -169,7 +169,7 @@
   left: 0;
   right: 0;
   padding: 0.5rem;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .roomOverlay h4 {
@@ -187,7 +187,7 @@
 .viewMore {
   align-self: center;
   justify-self: end;
-  color: #470F51;
+  color: #470f51;
   font-weight: bold;
   text-decoration: none;
   margin-top: 0.5rem;

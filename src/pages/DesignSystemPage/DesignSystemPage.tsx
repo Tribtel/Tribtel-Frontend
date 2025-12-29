@@ -1,15 +1,15 @@
-import Navbar from "../../components/Navbar/Navbar";
-import SearchBar from "../../components/Searchbar/Searchbar";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Input from "../../components/Input/Input";
-import Button from "../../components/Button/Button";
-import CardV from "../../components/Card-Vertical/Card-Vertical";
-import CardH from "../../components/Card-Horizontal/Card-Horizontal";
-import HotelDisplay from "../../components/HotelDisplay-Card/HotelCard";
-import Footer from "../../sections/Footer/Footer";
-import LocationsSection from "../../sections/LocationSection/LocationSection";
-import FAB from "../../components/FAB/FAB";
-import styles from "./DesignSystemPage.module.css";
+import Navbar from '../../components/Navbar/Navbar';
+import SearchBar from '../../components/Searchbar/Searchbar';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import Input from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
+import CardV from '../../components/Card-Vertical/Card-Vertical';
+import CardH from '../../components/Card-Horizontal/Card-Horizontal';
+import HotelDisplay from '../../components/HotelDisplay-Card/HotelCard';
+import Footer from '../../sections/Footer/Footer';
+import LocationsSection from '../../sections/LocationSection/LocationSection';
+import FAB from '../../components/FAB/FAB';
+import styles from './DesignSystemPage.module.css';
 
 export default function DesignSystemPage() {
   return (
@@ -18,11 +18,11 @@ export default function DesignSystemPage() {
       <div className={styles.layout}>
         <Sidebar
           links={[
-            { href: "#searchbar", label: "Search Bar" },
-            { href: "#inputs", label: "Inputs" },
-            { href: "#buttons", label: "Buttons" },
-            { href: "#cards", label: "Cards" },
-            { href: "#hotel-display", label: "Hotel Display" },
+            { href: '#searchbar', label: 'Search Bar' },
+            { href: '#inputs', label: 'Inputs' },
+            { href: '#buttons', label: 'Buttons' },
+            { href: '#cards', label: 'Cards' },
+            { href: '#hotel-display', label: 'Hotel Display' },
           ]}
         />
 
@@ -90,8 +90,8 @@ export default function DesignSystemPage() {
               <Button variant="primary">Visit</Button>
             </HotelDisplay>
           </section>
-          <LocationsSection/>
-          <Footer/>
+          <LocationsSection />
+          <Footer />
           <FAB />
         </main>
       </div>
