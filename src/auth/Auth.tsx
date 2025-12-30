@@ -2,7 +2,7 @@
 //It provides the authentication context to the entire application
 //It manages user login state and provides functions to log in and log out
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useMemo } from 'react';
 
 // Define types for user and context
 interface User {
@@ -70,8 +70,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('user');
   };
 
+  //Memorise the context value
+  const authContextValue = useMemo (
+    () => ({ user, signIn, signUp, signOut }),
+    [user] // only recreate when 'user' chnages
+  );
+
   return (
-    <AuthContext.Provider value={{ user, signIn, signUp, signOut }}>
+    <AuthContext.Provider value={authContextValue}>
       {children}
     </AuthContext.Provider>
   );
