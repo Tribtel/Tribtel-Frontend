@@ -60,7 +60,7 @@
 }
 
 .tabs button.active {
-  background: #f4942f; /* sunset orange */
+  background: #d86f00; /* sunset orange */
   color: #fff;
   font-weight: bold;
 }
